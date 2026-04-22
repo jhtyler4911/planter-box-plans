@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>4×4 Steel Planter Box Plans — v13 iOS — 6 Boxes · 3 Depths</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Sans:wght@300;400;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+  :root {
+    --steel-dark:#2C3840; --steel-mid:#4A5A65; --steel-lt:#7A9AAE; --steel-pale:#C8D8E0;
+    --rust:#C04A1A; --rust-lt:#E07040; --green:#2D5F3F; --green-lt:#4A9060;
+    --ink:#1A1E20; --paper:#F4F2EE; --paper2:#E8E5DF; --paper3:#DEDAD2;
+    --rule:#C8C4BC; --muted:#787068; --radius:4px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'IBM Plex Sans',sans-serif;font-weight:400;background:var(--paper);color:var(--ink);line-height:1.65;}
+  header{background:var(--steel-dark);color:var(--paper);position:relative;overflow:hidden;}
+  header::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 39px,rgba(255,255,255,0.04) 39px,rgba(255,255,255,0.04) 40px),repeating-linear-gradient(90deg,transparent,transparent 39px,rgba(255,255,255,0.04) 39px,rgba(255,255,255,0.04) 40px);}
+  .header-inner{position:relative;z-index:1;max-width:1000px;margin:0 auto;padding:52px 48px 44px;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:end;}
+  .header-kicker{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--steel-lt);margin-bottom:14px;}
+  header h1{font-family:'Bebas Neue',sans-serif;font-size:64px;line-height:0.95;letter-spacing:0.02em;margin-bottom:14px;}
+  header h1 em{font-style:normal;color:var(--rust-lt);}
+  .header-sub{font-size:14px;color:rgba(244,242,238,0.6);font-weight:300;max-width:500px;line-height:1.7;}
+  .header-specs{display:flex;flex-direction:column;gap:10px;min-width:240px;}
+  .spec-row{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(255,255,255,0.1);padding-bottom:8px;gap:20px;}
+  .spec-row:last-child{border-bottom:none;}
+  .spec-label{font-size:11px;color:rgba(244,242,238,0.5);letter-spacing:0.08em;text-transform:uppercase;white-space:nowrap;}
+  .spec-val{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--steel-pale);font-weight:500;text-align:right;}
+  .rev-tag{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;background:var(--rust);color:white;padding:3px 8px;border-radius:2px;margin-bottom:16px;}
+  .page{max-width:1000px;margin:0 auto;padding:44px 48px 80px;}
+  .tab-bar{display:flex;border-bottom:2px solid var(--rule);margin-bottom:40px;flex-wrap:wrap;}
+  .tab{padding:13px 17px;font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;color:var(--muted);border-bottom:3px solid transparent;margin-bottom:-2px;transition:color .15s,border-color .15s;user-select:none;white-space:nowrap;-webkit-tap-highlight-color:rgba(192,74,26,0.2);touch-action:manipulation;text-decoration:none;display:inline-block;}
+  .tab:hover{color:var(--ink);}
+  .tab.active{color:var(--rust);border-bottom-color:var(--rust);}
+  .panel{}
+  h2{font-family:'Bebas Neue',sans-serif;font-size:36px;letter-spacing:0.04em;margin-bottom:6px;color:var(--steel-dark);line-height:1;}
+  h3{font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);margin:32px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--rule);}
+  .section-intro{font-size:14px;color:var(--muted);margin-bottom:28px;max-width:660px;font-weight:300;line-height:1.75;}
+  table{width:100%;border-collapse:collapse;font-size:13px;margin:0 0 24px;}
+  thead th{background:var(--steel-dark);color:var(--paper);text-align:left;padding:9px 12px;font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;}
+  tbody tr{border-bottom:1px solid var(--rule);}
+  tbody tr:last-child{border-bottom:2px solid var(--rule);}
+  tbody tr:nth-child(even){background:var(--paper2);}
+  td{padding:9px 12px;vertical-align:top;line-height:1.55;}
+  td:first-child{font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;color:var(--steel-dark);white-space:nowrap;}
+  .note{background:var(--paper2);border-left:4px solid var(--green);padding:13px 16px;border-radius:0 var(--radius) var(--radius) 0;font-size:13px;margin:18px 0;color:var(--ink);line-height:1.7;}
+  .note strong{color:var(--green);font-weight:600;}
+  .warn{border-left-color:var(--rust);} .warn strong{color:var(--rust);}
+  .tip{border-left-color:var(--steel-lt);} .tip strong{color:var(--steel-mid);}
+  .diagram-wrap{background:white;border:1px solid var(--rule);border-radius:var(--radius);padding:28px;margin:16px 0 32px;overflow-x:auto;}
+  .diagram-wrap svg{display:block;width:100%;max-width:900px;margin:0 auto;}
+  .box-type-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin:24px 0 32px;}
+  .box-type-card{background:white;border:1px solid var(--rule);border-radius:var(--radius);padding:18px;}
+  .box-type-card h4{font-family:'Bebas Neue',sans-serif;font-size:22px;margin-bottom:12px;}
+  .box-type-card.deep{border-top:4px solid var(--rust);} .box-type-card.deep h4{color:var(--rust);}
+  .box-type-card.mid{border-top:4px solid var(--green);} .box-type-card.mid h4{color:var(--green);}
+  .box-type-card.shallow{border-top:4px solid var(--steel-mid);} .box-type-card.shallow h4{color:var(--steel-mid);}
+  .bt-row{display:flex;justify-content:space-between;font-size:12px;border-bottom:1px solid var(--rule);padding:5px 0;}
+  .bt-row:last-child{border-bottom:none;}
+  .bt-key{color:var(--muted);}
+  .bt-val{font-family:'IBM Plex Mono',monospace;font-weight:500;color:var(--ink);}
+  .steps{margin:0 0 24px;}
+  .step{display:flex;gap:18px;margin-bottom:20px;align-items:flex-start;}
+  .step-num{min-width:34px;height:34px;background:var(--steel-dark);color:var(--paper);font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:500;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;border-radius:2px;}
+  .step-body{flex:1;}
+  .step-body strong{display:block;font-size:14px;font-weight:600;margin-bottom:3px;color:var(--steel-dark);}
+  .step-body p{font-size:13px;color:var(--muted);line-height:1.7;}
+  .toolbar{display:flex;justify-content:flex-end;margin-bottom:28px;}
+  .btn{padding:9px 18px;border:1.5px solid var(--steel-dark);background:transparent;border-radius:var(--radius);font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;color:var(--steel-dark);transition:background .15s,color .15s;display:flex;align-items:center;gap:8px;}
+  .btn:hover{background:var(--steel-dark);color:var(--paper);}
+  @media (max-width:700px){
+    .header-inner{grid-template-columns:1fr;padding:28px 20px 24px;gap:20px;}
+    .header-specs{min-width:unset;}
+    header h1{font-size:44px;}
+    .page{padding:16px 12px 60px;}
+    .tab-bar{overflow-x:auto;-webkit-overflow-scrolling:touch;flex-wrap:nowrap;scrollbar-width:none;margin-bottom:24px;}
+    .tab-bar::-webkit-scrollbar{display:none;}
+    .tab{min-height:48px;padding:14px 12px;font-size:10px;flex-shrink:0;}
+    .box-type-grid{grid-template-columns:1fr;}
+    .diagram-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;padding:10px;}
+    h2{font-size:26px;}
+    table{font-size:12px;}
+    td{padding:7px 8px;}
+    td:first-child{white-space:normal;}
+    thead th{font-size:9px;padding:7px 8px;}
+    .section-intro{font-size:13px;}
+    .step-num{min-width:28px;height:28px;}
+  }
+  @media print{header{-webkit-print-color-adjust:exact;print-color-adjust:exact;}.tab-bar,.toolbar{display:none;}.panel{display:block!important;page-break-inside:avoid;}h2{page-break-before:always;margin-top:24px;}h2:first-of-type{page-break-before:avoid;}.note,thead th,tbody tr:nth-child(even){-webkit-print-color-adjust:exact;print-color-adjust:exact;}}
+</style>
+<script>
+function show(id){
+  alert('show: ' + id);
+  var ids=['overview','boxtypes','corner','siding','floor','bottomrail','cap','materials','assembly','components'];
+  for(var i=0;i<ids.length;i++){
+    var p=document.getElementById('panel-'+ids[i]);
+    if(p) p.style.display=(ids[i]===id)?'block':'none';
+  }
+  var tabs=document.querySelectorAll('.tab');
+  for(var j=0;j<tabs.length;j++){
+    tabs[j].style.color=(tabs[j].getAttribute('data-tab')===id)?'var(--rust)':'var(--muted)';
+    tabs[j].style.borderBottomColor=(tabs[j].getAttribute('data-tab')===id)?'var(--rust)':'transparent';
+  }
+}
+</script>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div>
+      <div class="rev-tag">v13 iOS — 6 boxes · 3 depths</div>
+      <div class="header-kicker">Workshop Build Plans · Modular Bolt-Together · All Angle Iron &amp; Corrugated Steel</div>
+      <h1>4×4 Steel<br>Planter <em>Boxes</em></h1>
+      <p class="header-sub">All-steel modular construction in three optimized depths — 24″ for tomatoes, 18″ for cucumbers &amp; peppers, 12″ for greens. Top cap and bottom rail frames are identical across all six boxes. No wood. Fully disassembles through a narrow gate.</p>
+    </div>
+    <div class="header-specs">
+      <div class="spec-row"><span class="spec-label">Footprint (all)</span><span class="spec-val">4′ × 4′</span></div>
+      <div class="spec-row"><span class="spec-label">Deep ×2</span><span class="spec-val">24″ soil · 36″ ht.</span></div>
+      <div class="spec-row"><span class="spec-label">Mid ×2</span><span class="spec-val">18″ soil · 30″ ht.</span></div>
+      <div class="spec-row"><span class="spec-label">Shallow ×2</span><span class="spec-val">12″ soil · 24″ ht.</span></div>
+      <div class="spec-row"><span class="spec-label">Leg clearance</span><span class="spec-val">12″ (all)</span></div>
+      <div class="spec-row"><span class="spec-label">Corner posts</span><span class="spec-val">2″×2″×3/16″</span></div>
+      <div class="spec-row"><span class="spec-label">Qty</span><span class="spec-val">× 6 boxes</span></div>
+    </div>
+  </div>
+</header>
+
+<div class="page">
+  <div class="toolbar">
+    <button class="btn" onclick="window.print()">
+      <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="1" width="10" height="7" rx="1"/><rect x="3" y="10" width="10" height="5" rx="1"/>
+        <path d="M3 8H1v5h2M13 8h2v5h-2"/><path d="M5 12h6M5 14h4"/>
+      </svg>
+      Print / Save PDF
+    </button>
+  </div>
+
+  <div class="tab-bar">
+    <a class="tab active" data-tab="overview" onclick="show('overview')" href="javascript:void(0)">Overview</a>
+    <a class="tab" data-tab="boxtypes" onclick="show('boxtypes')" href="javascript:void(0)">Box Types</a>
+    <a class="tab" data-tab="corner" onclick="show('corner')" href="javascript:void(0)">Corner Post</a>
+    <a class="tab" data-tab="siding" onclick="show('siding')" href="javascript:void(0)">Siding</a>
+    <a class="tab" data-tab="floor" onclick="show('floor')" href="javascript:void(0)">Floor</a>
+    <a class="tab" data-tab="bottomrail" onclick="show('bottomrail')" href="javascript:void(0)">Bottom Rail</a>
+    <a class="tab" data-tab="cap" onclick="show('cap')" href="javascript:void(0)">Top Cap</a>
+    <a class="tab" data-tab="materials" onclick="show('materials')" href="javascript:void(0)">Materials</a>
+    <a class="tab" data-tab="assembly" onclick="show('assembly')" href="javascript:void(0)">Assembly</a>
+    <a class="tab" data-tab="components" onclick="show('components')" href="javascript:void(0)">Components</a>
+  </div>
+
+  <!-- ══ OVERVIEW ══ -->
+  <div id="panel-overview" class="panel" style="display:block">
+    <h2>Overview</h2>
+    <p class="section-intro">Six 4×4 all-steel raised planters in three optimized depths. All share the same 12″ leg clearance, the same 48″×48″ top cap frame, and the same inside-fit bottom rail frame with X-support floor. Only post height and panel height change between box types.</p>
+
+    <h3>All three box types — proportional scale comparison (1″ = 4px)</h3>
+    <div class="diagram-wrap">
+      <!-- SCALE: 1" = 4px. Grade y=460. Floor y=412 (12"=48px leg clearance for all). -->
+      <!-- Deep:    panel 96px (24"), post 144px total (36"), top y=316 -->
+      <!-- Mid:     panel 72px (18"), post 120px total (30"), top y=340 -->
+      <!-- Shallow: panel 48px (12"), post  96px total (24"), top y=364 -->
+      <svg viewBox="0 0 900 530" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="oa" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+            <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </marker>
+        </defs>
+        <text font-family="'IBM Plex Mono',monospace" font-size="11" x="450" y="16" text-anchor="middle" fill="#787068">All boxes: 4′×4′ footprint · 12″ leg clearance · drawn proportional to scale</text>
+
+        <!-- ═══ DEEP BOX (24") left  cx≈155 ═══ -->
+        <line x1="30" y1="460" x2="290" y2="460" stroke="#B0A898" stroke-width="0.9" stroke-dasharray="5 3"/>
+        <!-- legs below floor (floor=412, grade=460) -->
+        <rect x="72" y="412" width="10" height="48" fill="#4A5A65" stroke="#2C3840" stroke-width="0.8"/>
+        <rect x="222" y="412" width="10" height="48" fill="#4A5A65" stroke="#2C3840" stroke-width="0.8"/>
+        <rect x="120" y="375" width="9" height="48" fill="#3A4A55" stroke="#2C3840" stroke-width="0.7"/>
+        <rect x="269" y="375" width="9" height="48" fill="#3A4A55" stroke="#2C3840" stroke-width="0.7"/>
+        <!-- posts above floor (top=316, 96px=24") -->
+        <polygon points="72,316 76,313 129,277 125,280 125,375 129,372 76,408 72,412" fill="#3A4A55" stroke="#2C3840" stroke-width="0.4"/>
+        <rect x="72" y="316" width="10" height="96" fill="#4A5A65" stroke="#2C3840" stroke-width="0.8"/>
+        <polygon points="232,316 236,313 289,277 285,280 285,375 289,372 236,408 232,412" fill="#3A4A55" stroke="#2C3840" stroke-width="0.4"/>
+        <rect x="222" y="316" width="10" height="96" fill="#4A5A65" stroke="#2C3840" stroke-width="0.8"/>
+        <rect x="120" y="280" width="9" height="95" fill="#4A5A65" stroke="#2C3840" stroke-width="0.7"/>
+        <rect x="269" y="280" width="9" height="95" fill="#4A5A65" stroke="#2C3840" stroke-width="0.7"/>
+        <!-- front panel 140×96 -->
+        <rect x="82" y="320" width="140" height="92" fill="#D8D4CC" stroke="#1A1E20" stroke-width="0.9"/>
+        <line x1="82" y1="331" x2="222" y2="331" stroke="#B0ABA2" stroke-width="0.8"/>
+        <line x1="82" y1="342" x2="222" y2="342" stroke="#B0ABA2" stroke-width="0.8"/>
+        <line x1="82" y1="353" x2="222" y2="353" stroke="#B0ABA2" stroke-width="0.8"/>
+        <line x1="82" y1="364" x2="222" y2="364" stroke="#B0ABA2" stroke-width="0.8"/>
+        <line x1="82" y1="375" x2="222" y2="375" stroke="#B0ABA2" stroke-width="0.8"/>
+        <line x1="82" y1="386" x2="222" y2="386" stroke="#B0ABA2" stroke-width="0.8"/>
+        <line x1="82" y1="397" x2="222" y2="397" stroke="#B0ABA2" stroke-width="0.8"/>
+        <line x1="82" y1="408" x2="222" y2="408" stroke="#B0ABA2" stroke-width="0.8"/>
+        <!-- right iso panel -->
+        <polygon points="232,320 278,285 278,375 232,412" fill="#CECAC2" stroke="#1A1E20" stroke-width="0.9"/>
+        <line x1="232" y1="331" x2="278" y2="296" stroke="#B0ABA2" stroke-width="0.8"/>
+        <line x1="232" y1="342" x2="278" y2="307" stroke="#B0ABA2" stroke-width="0.8"/>
+        <line x1="232" y1="353" x2="278" y2="318" stroke="#B0ABA2" stroke-width="0.8"/>
+        <line x1="232" y1="364" x2="278" y2="329" stroke="#B0ABA2" stroke-width="0.8"/>
+        <line x1="232" y1="375" x2="278" y2="340" stroke="#B0ABA2" stroke-width="0.8"/>
+        <line x1="232" y1="386" x2="278" y2="351" stroke="#B0ABA2" stroke-width="0.8"/>
+        <line x1="232" y1="397" x2="278" y2="362" stroke="#B0ABA2" stroke-width="0.8"/>
+        <line x1="232" y1="408" x2="278" y2="373" stroke="#B0ABA2" stroke-width="0.8"/>
+        <!-- top cap -->
+        <rect x="64" y="316" width="160" height="7" fill="#7A8F9E" stroke="#2C3840" stroke-width="0.9"/>
+        <polygon points="224,316 278,281 278,288 224,323" fill="#6A7F8E" stroke="#2C3840" stroke-width="0.9"/>
+        <polygon points="64,316 224,316 278,281 120,281" fill="#8AAABE" stroke="#4A5860" stroke-width="0.5" opacity="0.85"/>
+        <!-- bottom rail -->
+        <rect x="64" y="408" width="160" height="8" fill="#4A5A65" stroke="#2C3840" stroke-width="0.9"/>
+        <polygon points="224,408 278,373 278,381 224,416" fill="#3A4A55" stroke="#2C3840" stroke-width="0.9"/>
+        <!-- open top void -->
+        <polygon points="82,323 222,323 274,288 134,288" fill="#2A2820" opacity="0.5"/>
+        <!-- dimension lines -->
+        <line x1="46" y1="316" x2="46" y2="460" stroke="#787068" stroke-width="0.9" marker-start="url(#oa)" marker-end="url(#oa)"/>
+        <text font-family="sans-serif" font-size="10" x="35" y="392" text-anchor="middle" transform="rotate(-90,35,392)" fill="#787068">36″</text>
+        <line x1="30" y1="320" x2="30" y2="412" stroke="#C04A1A" stroke-width="0.9" marker-start="url(#oa)" marker-end="url(#oa)"/>
+        <text font-family="sans-serif" font-size="10" x="19" y="370" text-anchor="middle" transform="rotate(-90,19,370)" fill="#C04A1A">24″</text>
+        <line x1="30" y1="414" x2="30" y2="460" stroke="#787068" stroke-width="0.8" marker-start="url(#oa)" marker-end="url(#oa)"/>
+        <text font-family="sans-serif" font-size="9" x="19" y="441" text-anchor="middle" transform="rotate(-90,19,441)" fill="#787068">12″</text>
+        <!-- label -->
+        <text font-family="'Bebas Neue',sans-serif" font-size="21" x="160" y="490" text-anchor="middle" fill="#C04A1A">24″ Deep  ×2</text>
+        <text font-family="sans-serif" font-size="11" x="160" y="507" text-anchor="middle" fill="#787068">Tomatoes · 36″ working height</text>
+
+        <!-- ═══ MID BOX (18") center  cx≈455 ═══ -->
+        <!-- top=340, panel 72px -->
+        <line x1="330" y1="460" x2="590" y2="460" stroke="#B0A898" stroke-width="0.9" stroke-dasharray="5 3"/>
+        <rect x="372" y="412" width="10" height="48" fill="#4A5A65" stroke="#2C3840" stroke-width="0.8"/>
+        <rect x="522" y="412" width="10" height="48" fill="#4A5A65" stroke="#2C3840" stroke-width="0.8"/>
+        <rect x="420" y="375" width="9" height="48" fill="#3A4A55" stroke="#2C3840" stroke-width="0.7"/>
+        <rect x="569" y="375" width="9" height="48" fill="#3A4A55" stroke="#2C3840" stroke-width="0.7"/>
+        <polygon points="372,340 376,337 429,301 425,304 425,375 429,372 376,408 372,412" fill="#3A4A55" stroke="#2C3840" stroke-width="0.4"/>
+        <rect x="372" y="340" width="10" height="72" fill="#4A5A65" stroke="#2C3840" stroke-width="0.8"/>
+        <polygon points="532,340 536,337 589,301 585,304 585,375 589,372 536,408 532,412" fill="#3A4A55" stroke="#2C3840" stroke-width="0.4"/>
+        <rect x="522" y="340" width="10" height="72" fill="#4A5A65" stroke="#2C3840" stroke-width="0.8"/>
+        <rect x="420" y="304" width="9" height="71" fill="#4A5A65" stroke="#2C3840" stroke-width="0.7"/>
+        <rect x="569" y="304" width="9" height="71" fill="#4A5A65" stroke="#2C3840" stroke-width="0.7"/>
+        <!-- front panel 140×72 -->
+        <rect x="382" y="344" width="140" height="68" fill="#D8D4CC" stroke="#1A1E20" stroke-width="0.9"/>
+        <line x1="382" y1="356" x2="522" y2="356" stroke="#B0ABA2" stroke-width="0.8"/>
+        <line x1="382" y1="368" x2="522" y2="368" stroke="#B0ABA2" stroke-width="0.8"/>
+        <line x1="382" y1="380" x2="522" y2="380" stroke="#B0ABA2" stroke-width="0.8"/>
+        <line x1="382" y1="392" x2="522" y2="392" stroke="#B0ABA2" stroke-width="0.8"/>
+        <line x1="382" y1="404" x2="522" y2="404" stroke="#B0ABA2" stroke-width="0.8"/>
+        <line x1="382" y1="412" x2="522" y2="412" stroke="#B0ABA2" stroke-width="0.8"/>
+        <!-- right iso panel -->
+        <polygon points="532,344 578,309 578,375 532,412" fill="#CECAC2" stroke="#1A1E20" stroke-width="0.9"/>
+        <line x1="532" y1="356" x2="578" y2="321" stroke="#B0ABA2" stroke-width="0.8"/>
+        <line x1="532" y1="368" x2="578" y2="333" stroke="#B0ABA2" stroke-width="0.8"/>
+        <line x1="532" y1="380" x2="578" y2="345" stroke="#B0ABA2" stroke-width="0.8"/>
+        <line x1="532" y1="392" x2="578" y2="357" stroke="#B0ABA2" stroke-width="0.8"/>
+        <line x1="532" y1="404" x2="578" y2="369" stroke="#B0ABA2" stroke-width="0.8"/>
+        <line x1="532" y1="412" x2="578" y2="377" stroke="#B0ABA2" stroke-width="0.8"/>
+        <!-- top cap -->
+        <rect x="364" y="340" width="160" height="7" fill="#7A8F9E" stroke="#2C3840" stroke-width="0.9"/>
+        <polygon points="524,340 578,305 578,312 524,347" fill="#6A7F8E" stroke="#2C3840" stroke-width="0.9"/>
+        <polygon points="364,340 524,340 578,305 420,305" fill="#8AAABE" stroke="#4A5860" stroke-width="0.5" opacity="0.85"/>
+        <!-- bottom rail -->
+        <rect x="364" y="408" width="160" height="8" fill="#4A5A65" stroke="#2C3840" stroke-width="0.9"/>
+        <polygon points="524,408 578,373 578,381 524,416" fill="#3A4A55" stroke="#2C3840" stroke-width="0.9"/>
+        <!-- open top -->
+        <polygon points="382,347 522,347 574,312 434,312" fill="#2A2820" opacity="0.5"/>
+        <!-- dim lines -->
+        <line x1="346" y1="340" x2="346" y2="460" stroke="#787068" stroke-width="0.9" marker-start="url(#oa)" marker-end="url(#oa)"/>
+        <text font-family="sans-serif" font-size="10" x="335" y="404" text-anchor="middle" transform="rotate(-90,335,404)" fill="#787068">30″</text>
+        <line x1="330" y1="344" x2="330" y2="412" stroke="#2D5F3F" stroke-width="0.9" marker-start="url(#oa)" marker-end="url(#oa)"/>
+        <text font-family="sans-serif" font-size="10" x="319" y="382" text-anchor="middle" transform="rotate(-90,319,382)" fill="#2D5F3F">18″</text>
+        <line x1="330" y1="414" x2="330" y2="460" stroke="#787068" stroke-width="0.8" marker-start="url(#oa)" marker-end="url(#oa)"/>
+        <text font-family="sans-serif" font-size="9" x="319" y="441" text-anchor="middle" transform="rotate(-90,319,441)" fill="#787068">12″</text>
+        <text font-family="'Bebas Neue',sans-serif" font-size="21" x="457" y="490" text-anchor="middle" fill="#2D5F3F">18″ Mid  ×2</text>
+        <text font-family="sans-serif" font-size="11" x="457" y="507" text-anchor="middle" fill="#787068">Cucumbers · Peppers · 30″ working height</text>
+
+        <!-- ═══ SHALLOW BOX (12") right  cx≈757 ═══ -->
+        <!-- top=364, panel 48px -->
+        <line x1="630" y1="460" x2="890" y2="460" stroke="#B0A898" stroke-width="0.9" stroke-dasharray="5 3"/>
+        <rect x="672" y="412" width="10" height="48" fill="#4A5A65" stroke="#2C3840" stroke-width="0.8"/>
+        <rect x="822" y="412" width="10" height="48" fill="#4A5A65" stroke="#2C3840" stroke-width="0.8"/>
+        <rect x="720" y="375" width="9" height="48" fill="#3A4A55" stroke="#2C3840" stroke-width="0.7"/>
+        <rect x="869" y="375" width="9" height="48" fill="#3A4A55" stroke="#2C3840" stroke-width="0.7"/>
+        <polygon points="672,364 676,361 729,325 725,328 725,375 729,372 676,408 672,412" fill="#3A4A55" stroke="#2C3840" stroke-width="0.4"/>
+        <rect x="672" y="364" width="10" height="48" fill="#4A5A65" stroke="#2C3840" stroke-width="0.8"/>
+        <polygon points="832,364 836,361 889,325 885,328 885,375 889,372 836,408 832,412" fill="#3A4A55" stroke="#2C3840" stroke-width="0.4"/>
+        <rect x="822" y="364" width="10" height="48" fill="#4A5A65" stroke="#2C3840" stroke-width="0.8"/>
+        <rect x="720" y="328" width="9" height="47" fill="#4A5A65" stroke="#2C3840" stroke-width="0.7"/>
+        <rect x="869" y="328" width="9" height="47" fill="#4A5A65" stroke="#2C3840" stroke-width="0.7"/>
+        <!-- front panel 140×48 -->
+        <rect x="682" y="368" width="140" height="44" fill="#D8D4CC" stroke="#1A1E20" stroke-width="0.9"/>
+        <line x1="682" y1="380" x2="822" y2="380" stroke="#B0ABA2" stroke-width="0.8"/>
+        <line x1="682" y1="392" x2="822" y2="392" stroke="#B0ABA2" stroke-width="0.8"/>
+        <line x1="682" y1="404" x2="822" y2="404" stroke="#B0ABA2" stroke-width="0.8"/>
+        <line x1="682" y1="412" x2="822" y2="412" stroke="#B0ABA2" stroke-width="0.8"/>
+        <!-- right iso panel -->
+        <polygon points="832,368 878,333 878,375 832,412" fill="#CECAC2" stroke="#1A1E20" stroke-width="0.9"/>
+        <line x1="832" y1="380" x2="878" y2="345" stroke="#B0ABA2" stroke-width="0.8"/>
+        <line x1="832" y1="392" x2="878" y2="357" stroke="#B0ABA2" stroke-width="0.8"/>
+        <line x1="832" y1="404" x2="878" y2="369" stroke="#B0ABA2" stroke-width="0.8"/>
+        <line x1="832" y1="412" x2="878" y2="377" stroke="#B0ABA2" stroke-width="0.8"/>
+        <!-- top cap -->
+        <rect x="664" y="364" width="160" height="7" fill="#7A8F9E" stroke="#2C3840" stroke-width="0.9"/>
+        <polygon points="824,364 878,329 878,336 824,371" fill="#6A7F8E" stroke="#2C3840" stroke-width="0.9"/>
+        <polygon points="664,364 824,364 878,329 720,329" fill="#8AAABE" stroke="#4A5860" stroke-width="0.5" opacity="0.85"/>
+        <!-- bottom rail -->
+        <rect x="664" y="408" width="160" height="8" fill="#4A5A65" stroke="#2C3840" stroke-width="0.9"/>
+        <polygon points="824,408 878,373 878,381 824,416" fill="#3A4A55" stroke="#2C3840" stroke-width="0.9"/>
+        <!-- open top -->
+        <polygon points="682,371 822,371 874,336 734,336" fill="#2A2820" opacity="0.5"/>
+        <!-- dim lines -->
+        <line x1="646" y1="364" x2="646" y2="460" stroke="#787068" stroke-width="0.9" marker-start="url(#oa)" marker-end="url(#oa)"/>
+        <text font-family="sans-serif" font-size="10" x="635" y="416" text-anchor="middle" transform="rotate(-90,635,416)" fill="#787068">24″</text>
+        <line x1="630" y1="368" x2="630" y2="412" stroke="#4A9060" stroke-width="0.9" marker-start="url(#oa)" marker-end="url(#oa)"/>
+        <text font-family="sans-serif" font-size="10" x="619" y="394" text-anchor="middle" transform="rotate(-90,619,394)" fill="#4A9060">12″</text>
+        <line x1="630" y1="414" x2="630" y2="460" stroke="#787068" stroke-width="0.8" marker-start="url(#oa)" marker-end="url(#oa)"/>
+        <text font-family="sans-serif" font-size="9" x="619" y="441" text-anchor="middle" transform="rotate(-90,619,441)" fill="#787068">12″</text>
+        <text font-family="'Bebas Neue',sans-serif" font-size="21" x="757" y="490" text-anchor="middle" fill="#4A5A65">12″ Shallow  ×2</text>
+        <text font-family="sans-serif" font-size="11" x="757" y="507" text-anchor="middle" fill="#787068">Greens · Kale · Arugula · 24″ working height</text>
+      </svg>
+    </div>
+
+    <div class="box-type-grid">
+      <div class="box-type-card deep">
+        <h4>24″ Deep — ×2</h4>
+        <div class="bt-row"><span class="bt-key">Crop</span><span class="bt-val">Tomatoes</span></div>
+        <div class="bt-row"><span class="bt-key">Soil depth</span><span class="bt-val">24″</span></div>
+        <div class="bt-row"><span class="bt-key">Leg clearance</span><span class="bt-val">12″</span></div>
+        <div class="bt-row"><span class="bt-key">Working height</span><span class="bt-val">36″</span></div>
+        <div class="bt-row"><span class="bt-key">Post length</span><span class="bt-val">36″</span></div>
+        <div class="bt-row"><span class="bt-key">Panel height</span><span class="bt-val">24″</span></div>
+        <div class="bt-row"><span class="bt-key">Soil / box</span><span class="bt-val">~2.4 cu yd</span></div>
+      </div>
+      <div class="box-type-card mid">
+        <h4>18″ Mid — ×2</h4>
+        <div class="bt-row"><span class="bt-key">Crops</span><span class="bt-val">Cucumbers, Peppers</span></div>
+        <div class="bt-row"><span class="bt-key">Soil depth</span><span class="bt-val">18″</span></div>
+        <div class="bt-row"><span class="bt-key">Leg clearance</span><span class="bt-val">12″</span></div>
+        <div class="bt-row"><span class="bt-key">Working height</span><span class="bt-val">30″</span></div>
+        <div class="bt-row"><span class="bt-key">Post length</span><span class="bt-val">30″</span></div>
+        <div class="bt-row"><span class="bt-key">Panel height</span><span class="bt-val">18″</span></div>
+        <div class="bt-row"><span class="bt-key">Soil / box</span><span class="bt-val">~1.8 cu yd</span></div>
+      </div>
+      <div class="box-type-card shallow">
+        <h4>12″ Shallow — ×2</h4>
+        <div class="bt-row"><span class="bt-key">Crops</span><span class="bt-val">Greens, Kale, Arugula</span></div>
+        <div class="bt-row"><span class="bt-key">Soil depth</span><span class="bt-val">12″</span></div>
+        <div class="bt-row"><span class="bt-key">Leg clearance</span><span class="bt-val">12″</span></div>
+        <div class="bt-row"><span class="bt-key">Working height</span><span class="bt-val">24″</span></div>
+        <div class="bt-row"><span class="bt-key">Post length</span><span class="bt-val">24″</span></div>
+        <div class="bt-row"><span class="bt-key">Panel height</span><span class="bt-val">12″</span></div>
+        <div class="bt-row"><span class="bt-key">Soil / box</span><span class="bt-val">~1.2 cu yd</span></div>
+      </div>
+    </div>
+
+    <div class="note tip"><strong>All-steel:</strong> No wood means no rot, no CCA concerns, no wood-soil contact issues. All three box types share the same corner post spec (2″×2″×3/16″ angle iron), the same 48″×48″ top cap frame, the same inside-fit bottom rail frame, and the same hardware. Only post length and panel height differ.</div>
+    <div class="note"><strong>Gusset ledge:</strong> The tube gusset ledge is always 12″ up from the post bottom on all three box types — this is what establishes the floor at 12″ above grade regardless of box depth.</div>
+    <div class="note warn"><strong>Panel widths:</strong> First pair of panels cut to ≈47⅝″ (48″ minus 2× post wall thickness). Second pair measured and cut to actual gap after first pair is installed. Same process on all three box types.</div>
+  </div>
+
+  <!-- ══ BOX TYPES ══ -->
+  <div id="panel-boxtypes" class="panel" style="display:none">
+    <h2>Box Type Details</h2>
+    <p class="section-intro">Three box types share all structural logic. Post height, panel height, and soil volume are the only variables. The gusset ledge is always 12″ from the post bottom on all three.</p>
+
+    <h3>Corner post lengths</h3>
+    <table>
+      <thead><tr><th>Box type</th><th>Soil depth</th><th>Leg clearance</th><th>Post length</th><th>Gusset position</th><th>Working height</th></tr></thead>
+      <tbody>
+        <tr><td>Deep ×2</td><td>24″</td><td>12″</td><td>36″</td><td>12″ from post bottom</td><td>36″</td></tr>
+        <tr><td>Mid ×2</td><td>18″</td><td>12″</td><td>30″</td><td>12″ from post bottom</td><td>30″</td></tr>
+        <tr><td>Shallow ×2</td><td>12″</td><td>12″</td><td>24″</td><td>12″ from post bottom</td><td>24″</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Panel height and corrugated sheet economy</h3>
+    <table>
+      <thead><tr><th>Box type</th><th>Panel height</th><th>Panels per 4×8 sheet</th><th>Sheets for ×2 boxes</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Deep ×2</td><td>24″</td><td>2</td><td>4 sheets</td><td>One cut down the middle — zero waste</td></tr>
+        <tr><td>Mid ×2</td><td>18″</td><td>2</td><td>4 sheets</td><td>6″ offcut per sheet — save for patching</td></tr>
+        <tr><td>Shallow ×2</td><td>12″</td><td>4</td><td>2 sheets</td><td>Four 12″ rips from 48″ sheet — zero waste</td></tr>
+        <tr><td><strong>Total</strong></td><td>—</td><td>—</td><td><strong>10 sheets</strong></td><td>Buy 11 for one spare</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Soil volume</h3>
+    <table>
+      <thead><tr><th>Box type</th><th>Volume per box</th><th>For ×2 boxes</th></tr></thead>
+      <tbody>
+        <tr><td>Deep 24″ ×2</td><td>~2.37 cu yd</td><td>~4.7 cu yd</td></tr>
+        <tr><td>Mid 18″ ×2</td><td>~1.78 cu yd</td><td>~3.6 cu yd</td></tr>
+        <tr><td>Shallow 12″ ×2</td><td>~1.19 cu yd</td><td>~2.4 cu yd</td></tr>
+        <tr><td><strong>Total (6 boxes)</strong></td><td>—</td><td><strong>~10.7 cu yd</strong></td></tr>
+      </tbody>
+    </table>
+
+    <div class="note warn"><strong>Filled weights:</strong> 24″ deep: ~1,100–1,300 lbs per box. 18″ mid: ~820–970 lbs. 12″ shallow: ~550–640 lbs. Position all boxes before filling — they're not moving after that.</div>
+    <div class="note"><strong>X-support floor ribs:</strong> All three box types use the same X-pattern flat bar floor support (1½″×3/16″ × 48″, on-edge). The 12″ shallow box is lighter but the X-support adds negligible cost and prevents any long-term floor sag.</div>
+  </div>
+
+  <!-- ══ CORNER POST ══ -->
+  <div id="panel-corner" class="panel" style="display:none">
+    <h2>Corner Post Detail</h2>
+    <p class="section-intro">A single piece of 2″×2″×3/16″ angle iron. Only total length varies between box types. The cross-section, gusset placement (12″ from post bottom), and bolt hole locations are identical across all three sizes. All four corners of every box are interchangeable.</p>
+
+    <h3>Post lengths</h3>
+    <table>
+      <thead><tr><th>Box type</th><th>Post length</th><th>Box depth</th><th>Leg below floor</th></tr></thead>
+      <tbody>
+        <tr><td>Deep ×2 boxes</td><td>36″</td><td>24″</td><td>12″</td></tr>
+        <tr><td>Mid ×2 boxes</td><td>30″</td><td>18″</td><td>12″</td></tr>
+        <tr><td>Shallow ×2 boxes</td><td>24″</td><td>12″</td><td>12″</td></tr>
+      </tbody>
+    </table>
+
+    <div class="diagram-wrap">
+      <svg viewBox="0 0 680 460" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="arr2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </marker>
+        </defs>
+        <text font-family="'IBM Plex Mono',monospace" font-size="12" font-weight="500" x="190" y="28" text-anchor="middle" fill="#1A1E20">Top-down cross-section — one corner</text>
+        <text font-family="sans-serif" font-size="11" x="190" y="44" text-anchor="middle" fill="#787068">exterior corner faces top-left · exaggerated for clarity · same for all 3 box types</text>
+        <rect x="100" y="70" width="16" height="200" fill="#4A5A65" stroke="#2C3840" stroke-width="1"/>
+        <rect x="100" y="70" width="200" height="16" fill="#4A5A65" stroke="#2C3840" stroke-width="1"/>
+        <circle cx="116" cy="86" r="5" fill="#C04A1A" opacity="0.85"/>
+        <rect x="116" y="86" width="170" height="20" fill="#D5D0C8" stroke="#8A8078" stroke-width="0.8"/>
+        <line x1="116" y1="93" x2="286" y2="93" stroke="#B8B3AA" stroke-width="0.8"/>
+        <line x1="116" y1="100" x2="286" y2="100" stroke="#B8B3AA" stroke-width="0.8"/>
+        <rect x="116" y="86" width="20" height="170" fill="#D5D0C8" stroke="#8A8078" stroke-width="0.8"/>
+        <line x1="116" y1="102" x2="136" y2="102" stroke="#B8B3AA" stroke-width="0.8"/>
+        <line x1="116" y1="118" x2="136" y2="118" stroke="#B8B3AA" stroke-width="0.8"/>
+        <line x1="116" y1="134" x2="136" y2="134" stroke="#B8B3AA" stroke-width="0.8"/>
+        <line x1="116" y1="150" x2="136" y2="150" stroke="#B8B3AA" stroke-width="0.8"/>
+        <line x1="116" y1="166" x2="136" y2="166" stroke="#B8B3AA" stroke-width="0.8"/>
+        <line x1="116" y1="182" x2="136" y2="182" stroke="#B8B3AA" stroke-width="0.8"/>
+        <line x1="116" y1="198" x2="136" y2="198" stroke="#B8B3AA" stroke-width="0.8"/>
+        <line x1="116" y1="214" x2="136" y2="214" stroke="#B8B3AA" stroke-width="0.8"/>
+        <line x1="116" y1="230" x2="136" y2="230" stroke="#B8B3AA" stroke-width="0.8"/>
+        <line x1="116" y1="246" x2="136" y2="246" stroke="#B8B3AA" stroke-width="0.8"/>
+        <circle cx="108" cy="96" r="5" fill="#2C3840"/>
+        <line x1="104" y1="92" x2="112" y2="100" stroke="#1A1E20" stroke-width="1.2"/>
+        <line x1="112" y1="92" x2="104" y2="100" stroke="#1A1E20" stroke-width="1.2"/>
+        <circle cx="126" cy="78" r="5" fill="#2C3840"/>
+        <line x1="122" y1="74" x2="130" y2="82" stroke="#1A1E20" stroke-width="1.2"/>
+        <line x1="130" y1="74" x2="122" y2="82" stroke="#1A1E20" stroke-width="1.2"/>
+        <text font-family="sans-serif" font-size="12" x="220" y="200" text-anchor="middle" fill="#B0A898">interior of box</text>
+        <text font-family="sans-serif" font-size="11" x="72" y="68" fill="#787068">exterior</text>
+        <line x1="100" y1="320" x2="300" y2="320" stroke="#787068" stroke-width="0.8" marker-start="url(#arr2)" marker-end="url(#arr2)"/>
+        <text font-family="'IBM Plex Mono',monospace" font-size="11" x="200" y="336" text-anchor="middle" fill="#787068">2″ leg</text>
+        <line x1="62" y1="70" x2="62" y2="270" stroke="#787068" stroke-width="0.8" marker-start="url(#arr2)" marker-end="url(#arr2)"/>
+        <text font-family="'IBM Plex Mono',monospace" font-size="11" x="52" y="174" text-anchor="middle" transform="rotate(-90,52,174)" fill="#787068">2″ leg</text>
+        <line x1="100" y1="358" x2="116" y2="358" stroke="#787068" stroke-width="0.8" marker-start="url(#arr2)" marker-end="url(#arr2)"/>
+        <text font-family="sans-serif" font-size="12" x="120" y="362" fill="#787068">3/16″ wall</text>
+        <line x1="118" y1="100" x2="80" y2="140" stroke="#C8C4BC" stroke-width="0.6" stroke-dasharray="3 3"/>
+        <text font-family="sans-serif" font-size="12" x="22" y="142" fill="#C04A1A">fillet weld</text>
+        <text font-family="sans-serif" font-size="12" x="22" y="156" fill="#787068">inside corner</text>
+        <line x1="108" y1="101" x2="60" y2="180" stroke="#C8C4BC" stroke-width="0.6" stroke-dasharray="3 3"/>
+        <text font-family="sans-serif" font-size="12" x="14" y="184" fill="#2C3840">self-drill</text>
+        <text font-family="sans-serif" font-size="12" x="14" y="198" fill="#2C3840">screw</text>
+        <line x1="286" y1="96" x2="360" y2="78" stroke="#C8C4BC" stroke-width="0.6" stroke-dasharray="3 3"/>
+        <text font-family="sans-serif" font-size="12" x="363" y="74" fill="#4A5A65">panel captured by leg</text>
+        <text font-family="sans-serif" font-size="12" x="363" y="88" fill="#787068">one face per panel — symmetric</text>
+        <!-- three post isometric comparison -->
+        <text font-family="'IBM Plex Mono',monospace" font-size="11" x="555" y="20" text-anchor="middle" fill="#1A1E20">Three sizes — same cross-section</text>
+        <!-- Deep 36" -->
+        <rect x="468" y="40" width="12" height="288" fill="#4A5A65" stroke="#2C3840" stroke-width="0.9"/>
+        <line x1="455" y1="184" x2="492" y2="184" stroke="#2D5F3F" stroke-width="0.8" stroke-dasharray="4 2"/>
+        <line x1="455" y1="328" x2="492" y2="328" stroke="#B0A898" stroke-width="0.8" stroke-dasharray="5 3"/>
+        <rect x="468" y="328" width="12" height="12" fill="#A0B8C8" stroke="#2C3840" stroke-width="1"/>
+        <circle cx="471" cy="340" r="2.5" fill="#C04A1A" opacity="0.9"/>
+        <circle cx="477" cy="340" r="2.5" fill="#C04A1A" opacity="0.9"/>
+        <line x1="452" y1="40" x2="452" y2="328" stroke="#C04A1A" stroke-width="0.8" marker-start="url(#arr2)" marker-end="url(#arr2)"/>
+        <text font-family="sans-serif" font-size="10" x="441" y="188" text-anchor="middle" transform="rotate(-90,441,188)" fill="#C04A1A">24″</text>
+        <line x1="452" y1="330" x2="452" y2="390" stroke="#787068" stroke-width="0.7" marker-start="url(#arr2)" marker-end="url(#arr2)"/>
+        <text font-family="sans-serif" font-size="9" x="441" y="364" text-anchor="middle" transform="rotate(-90,441,364)" fill="#787068">12″</text>
+        <text font-family="sans-serif" font-size="11" x="474" y="406" text-anchor="middle" fill="#C04A1A">36″</text>
+        <text font-family="sans-serif" font-size="10" x="474" y="418" text-anchor="middle" fill="#787068">Deep</text>
+        <!-- Mid 30" -->
+        <rect x="528" y="88" width="12" height="240" fill="#4A5A65" stroke="#2C3840" stroke-width="0.9"/>
+        <line x1="518" y1="232" x2="552" y2="232" stroke="#2D5F3F" stroke-width="0.8" stroke-dasharray="4 2"/>
+        <line x1="518" y1="328" x2="552" y2="328" stroke="#B0A898" stroke-width="0.8" stroke-dasharray="5 3"/>
+        <rect x="528" y="328" width="12" height="12" fill="#A0B8C8" stroke="#2C3840" stroke-width="1"/>
+        <circle cx="531" cy="340" r="2.5" fill="#C04A1A" opacity="0.9"/>
+        <circle cx="537" cy="340" r="2.5" fill="#C04A1A" opacity="0.9"/>
+        <text font-family="sans-serif" font-size="11" x="534" y="406" text-anchor="middle" fill="#2D5F3F">30″</text>
+        <text font-family="sans-serif" font-size="10" x="534" y="418" text-anchor="middle" fill="#787068">Mid</text>
+        <!-- Shallow 24" -->
+        <rect x="588" y="136" width="12" height="192" fill="#4A5A65" stroke="#2C3840" stroke-width="0.9"/>
+        <line x1="578" y1="280" x2="612" y2="280" stroke="#2D5F3F" stroke-width="0.8" stroke-dasharray="4 2"/>
+        <line x1="578" y1="328" x2="612" y2="328" stroke="#B0A898" stroke-width="0.8" stroke-dasharray="5 3"/>
+        <rect x="588" y="328" width="12" height="12" fill="#A0B8C8" stroke="#2C3840" stroke-width="1"/>
+        <circle cx="591" cy="340" r="2.5" fill="#C04A1A" opacity="0.9"/>
+        <circle cx="597" cy="340" r="2.5" fill="#C04A1A" opacity="0.9"/>
+        <text font-family="sans-serif" font-size="11" x="594" y="406" text-anchor="middle" fill="#4A5A65">24″</text>
+        <text font-family="sans-serif" font-size="10" x="594" y="418" text-anchor="middle" fill="#787068">Shallow</text>
+        <text font-family="sans-serif" font-size="10" x="620" y="332" fill="#B0A898">grade (all)</text>
+        <text font-family="sans-serif" font-size="10" x="620" y="188" fill="#2D5F3F">floor (24″)</text>
+        <text font-family="sans-serif" font-size="10" x="620" y="236" fill="#2D5F3F">floor (18″)</text>
+        <text font-family="sans-serif" font-size="10" x="620" y="284" fill="#2D5F3F">floor (12″)</text>
+      </svg>
+    </div>
+
+    <div class="note tip"><strong>Buying tip:</strong> 2″×2″×3/16″ angle iron — same product for all three post sizes. On a 20′ stick: 36″ posts → 6 per stick; 30″ posts → 8 per stick; 24″ posts → 10 per stick. Bottom rail pieces (48″) come from separate sticks.</div>
+    <div class="note"><strong>Finishing:</strong> Cold galvanizing compound to all bare metal, then self-etching primer, then exterior enamel topcoat. Matte black looks excellent against galvanized corrugated steel.</div>
+  </div>
+
+  <!-- ══ SIDING ══ -->
+  <div id="panel-siding" class="panel" style="display:none">
+    <h2>Corrugated Metal Siding</h2>
+    <p class="section-intro">Four panels per box — one per side. Standard 29-gauge galvanized corrugated steel with horizontal corrugation. Panel height matches box depth. All panels attach identically to the interior face of the corner post legs via self-drilling screws.</p>
+
+    <h3>Panel dimensions by box type</h3>
+    <table>
+      <thead><tr><th>Box type</th><th>Panel height</th><th>First pair width</th><th>Sheet yield</th><th>Sheets (×2 boxes)</th></tr></thead>
+      <tbody>
+        <tr><td>Deep 24″</td><td>24″</td><td>≈47⅝″</td><td>2 panels per 3×8 sheet (12″ offcut strip)</td><td>4 sheets</td></tr>
+        <tr><td>Mid 18″</td><td>18″</td><td>≈47⅝″</td><td>2 panels per 3×8 sheet — zero waste</td><td>4 sheets</td></tr>
+        <tr><td>Shallow 12″</td><td>12″</td><td>≈47⅝″</td><td>2 from Deep offcut strips — no extra sheets</td><td>0 extra sheets</td></tr>
+        <tr><td><strong>Total</strong></td><td>—</td><td>—</td><td>—</td><td><strong>8 sheets</strong></td></tr>
+      </tbody>
+    </table>
+
+    <h3>Shared spec — all box types</h3>
+    <table>
+      <thead><tr><th>Parameter</th><th>Value</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Second pair width</td><td>Measure to fit</td><td>Cut to actual gap after first pair installed — applies to all three types</td></tr>
+        <tr><td>Corrugation</td><td>Horizontal</td><td>Ribs run side to side across the box face</td></tr>
+        <tr><td>Profile</td><td>2½″ pitch, ¾″ depth</td><td>Standard corrugated — widely available</td></tr>
+        <tr><td>Gauge</td><td>29-gauge</td><td>G-90 galvanized minimum; Galvalume preferred</td></tr>
+        <tr><td>Fasteners</td><td>#10 × 3/4″ self-drilling hex, EPDM washer</td><td>2–3 per post face per panel, top and bottom</td></tr>
+      </tbody>
+    </table>
+
+    <div class="note"><strong>Total sheet count:</strong> 8 sheets for all 6 boxes. The 12″ offcut strips from the 4 Deep sheets yield all 8 Shallow panels — zero extra sheets needed. Buy 10 total (one spare each for Deep and Mid) from the same standard 3×8 galvanized corrugated product.</div>
+  </div>
+
+  <!-- ══ FLOOR ══ -->
+  <div id="panel-floor" class="panel" style="display:none">
+    <h2>Expanded Metal Floor</h2>
+    <p class="section-intro">All six boxes share the same floor assembly. Galvanized expanded metal rests on the X-pattern flat bar ribs welded to the bottom rail frame. Floor is always 12″ above grade. The bottom rail frame and X-support are completely identical across all three box types — batch-fabricate all six at once.</p>
+
+    <h3>Floor specification — all box types</h3>
+    <table>
+      <thead><tr><th>Parameter</th><th>Specification</th></tr></thead>
+      <tbody>
+        <tr><td>Material</td><td>Galvanized flattened expanded metal, ¾″ × #9 SWD</td></tr>
+        <tr><td>Sheet size per box</td><td>≈47⅝″ × 47⅝″ — measure actual interior before cutting</td></tr>
+        <tr><td>Height above grade</td><td>12″ — identical for all three box types</td></tr>
+        <tr><td>Bottom rail frame</td><td>Four 2″×2″×3/16″ pieces cut to ≈47⅝″ (clear span between post inner faces) with square ends, bolted inside the corner posts. No slits required — full cross-section preserved. Identical across all box types.</td></tr>
+        <tr><td>Tube gusset ledge</td><td>~1¾″ sq tube welded to each corner post at 12″ from post bottom — same position on all three post lengths</td></tr>
+        <tr><td>Support ribs</td><td>Two 1½″ × 3/16″ flat bars, 48″ long, on-edge in X pattern — welded to underside of bottom rail pieces before site installation</td></tr>
+        <tr><td>Center cross-notch</td><td>Each bar notched ¾″ deep at midpoint (one from top, one from bottom) — interlocks flush</td></tr>
+        <tr><td>Floor attachment</td><td>Rests on bottom rail and flat bar ribs; wire-tied at corners and rib crossings</td></tr>
+        <tr><td>Soil barrier</td><td>3-oz landscape fabric over expanded metal before filling</td></tr>
+      </tbody>
+    </table>
+
+    <div class="note"><strong>Batch economy:</strong> All six bottom rail frames are cut and welded identically — no setup changes. All 12 X-support flat bars are the same dimension. Fabricate everything in one run.</div>
+    <div class="note tip"><strong>Gopher protection:</strong> Galvanized expanded metal is impenetrable to gophers and voles. The ¾″ SWD opening drains freely while retaining growing medium above the landscape fabric.</div>
+  </div>
+
+  <!-- ══ BOTTOM RAIL ══ -->
+  <div id="panel-bottomrail" class="panel" style="display:none">
+    <h2>Bottom Rail</h2>
+    <p class="section-intro">Four pieces per box — one per side. 2″×2″×3/16″ angle iron, cut to 47⅝″ with 45° miters on both ends. Horizontal leg faces down and rests on the tube gusset ledges at 12″ above grade. Vertical leg faces inward and bolts to the interior face of each corner post. No slits — full cross-section intact. All 24 pieces across six boxes are identical.</p>
+
+    <h3>Cut list — per box (all 6 boxes identical)</h3>
+    <table>
+      <thead><tr><th>Piece</th><th>Stock</th><th>Cut length</th><th>Qty per box</th><th>Ends</th></tr></thead>
+      <tbody>
+        <tr><td>All four sides</td><td>2″×2″×3/16″ angle</td><td>47⅝″</td><td>4</td><td>45° miter both ends · no slits</td></tr>
+      </tbody>
+    </table>
+    <div class="note tip"><strong>Why 47⅝″:</strong> Each piece spans the clear distance between the interior faces of opposite corner posts — 48″ overall footprint minus 2× the 3/16″ post wall thickness = 47⅝″. Measure your actual interior before final cuts.</div>
+
+    <h3>Orientation</h3>
+    <table>
+      <thead><tr><th>Leg</th><th>Faces</th><th>Function</th></tr></thead>
+      <tbody>
+        <tr><td>Horizontal leg</td><td>Down</td><td>Rests on top face of tube gusset ledge at 12″ above grade — carries full floor load</td></tr>
+        <tr><td>Vertical leg</td><td>Inward (toward box center)</td><td>Bolts to interior face of corner post · panel bottom edge screws into this face</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Fabrication sequence</h3>
+    <table>
+      <thead><tr><th>Step</th><th>Action</th></tr></thead>
+      <tbody>
+        <tr><td>1 — Cut</td><td>Cut 4 pieces per box to 47⅝″ with 45° miters on both ends. All 24 pieces are identical — batch all six boxes at once.</td></tr>
+        <tr><td>2 — Drill bolt holes</td><td>Drill two ¼″ bolt holes through the vertical leg at each end, centered on the leg, evenly spaced — while pieces are flat on the bench.</td></tr>
+        <tr><td>3 — Drill panel pilot holes</td><td>Pre-drill 5/32″ pilot holes in the vertical leg face at panel attachment locations — 2–3 holes per piece, evenly spaced — while flat on the bench.</td></tr>
+        <tr><td>4 — Weld X-ribs</td><td>Clamp the four rail pieces for one box in their final positions. Weld the X-rib assembly to the underside of the horizontal legs. Repeat for all 6 sets.</td></tr>
+        <tr><td>5 — Treat</td><td>Cold galvanizing compound on all cut ends and weld zones → self-etching primer → enamel topcoat.</td></tr>
+        <tr><td>6 — Install on site</td><td>Set pieces inside the four corner posts, horizontal leg down on gusset ledges. Fasten with ¼″ × ¾″ grade 5 bolts, washers, nylon lock nuts — 2 per end. Level before fully tightening.</td></tr>
+      </tbody>
+    </table>
+
+    <div class="note warn"><strong>Load path:</strong> All soil weight transfers from the expanded metal floor → X-ribs → bottom rail horizontal legs → gusset ledges → corner posts → grade. No slits means the full 3/16″ wall carries this load at every end — an important improvement over the previous slit design.</div>
+    <div class="note"><strong>Panel attachment:</strong> The corrugated panel bottom edge bears against the vertical leg (inward-facing). Screws go through the panel into the pre-drilled pilot holes in the vertical leg. The panel is captured between the vertical leg and the box interior.</div>
+  </div>
+
+  <!-- ══ CAP ══ -->
+  <div id="panel-cap" class="panel" style="display:none">
+    <h2>Angle Iron Top Cap</h2>
+    <p class="section-intro">1½″ × 1½″ × ⅛″ angle iron, four pieces at 48″ with 45° miters, welded into a 48″×48″ frame. Completely identical across all six boxes regardless of depth. The horizontal leg is the hand-rest surface; the vertical leg drops down and the panel tops screw into it.</p>
+
+    <h3>Cap cut list — per box (all 6 boxes identical)</h3>
+    <table>
+      <thead><tr><th>Piece</th><th>Size</th><th>Cut length</th><th>Qty per box</th><th>Miter</th></tr></thead>
+      <tbody>
+        <tr><td>All four sides</td><td>1½″×1½″×⅛″ angle</td><td>48″</td><td>4</td><td>45° both ends · no slits</td></tr>
+      </tbody>
+    </table>
+    <div class="note tip"><strong>Economy:</strong> 24 pieces total for 6 boxes. One 20′ stick yields 5 pieces. Buy 5 sticks (25 pcs, 1 spare).</div>
+
+    <h3>Fabrication sequence</h3>
+    <table>
+      <thead><tr><th>Step</th><th>Action</th></tr></thead>
+      <tbody>
+        <tr><td>1 — Cut</td><td>Cut 4 pieces to 48″ with 45° miters on both ends. Repeat for all 6 boxes (24 pieces total).</td></tr>
+        <tr><td>2 — Dry fit</td><td>Clamp into 48″×48″ square on flat surface. Check miter fit and squareness.</td></tr>
+        <tr><td>3 — Tack weld</td><td>Tack-weld each inside miter corner — two tacks per corner.</td></tr>
+        <tr><td>4 — Full weld</td><td>Full fillet weld on all four inside corners. Keep exterior clean.</td></tr>
+        <tr><td>5 — Dress</td><td>Grind exterior miter seams flush. Wire-brush all weld areas.</td></tr>
+        <tr><td>6 — Treat</td><td>Cold galvanizing → self-etching primer → enamel topcoat. Cure fully.</td></tr>
+        <tr><td>7 — Install</td><td>Set cap on top of assembled box. Bolt through vertical leg into post — ¼″ grade 5 bolts, two per corner.</td></tr>
+      </tbody>
+    </table>
+    <div class="note warn"><strong>Powder coat option:</strong> Matte black powder coat on the welded caps looks excellent against galvanized corrugated steel. Many local fab shops offer this at reasonable cost.</div>
+  </div>
+
+  <!-- ══ MATERIALS ══ -->
+  <div id="panel-materials" class="panel" style="display:none">
+    <h2>Full Material List</h2>
+    <p class="section-intro">All quantities for six complete boxes across three depth configurations. No wood in this build.</p>
+
+    <!-- ── SECTION A: STEEL STICKS ── -->
+    <h2 style="font-size:22px;margin-top:32px;margin-bottom:4px;color:var(--steel-dark);">A — Steel Sticks</h2>
+
+    <!-- A1 -->
+    <h3 style="font-family:'IBM Plex Sans',sans-serif;font-size:16px;font-weight:600;letter-spacing:0.01em;text-transform:none;color:var(--steel-dark);margin-top:28px;margin-bottom:8px;padding-bottom:4px;border-bottom:2px solid var(--steel-pale);">A1 · 2″×2″×3/16″ angle iron — corner posts &amp; bottom rail frames</h3>
+    <p style="font-size:13px;color:var(--muted);margin-bottom:12px;line-height:1.7;">Corner posts and bottom rail frames are cut from the same stock. Total needed: 8×36″ + 8×30″ + 8×24″ posts = 60 lin. ft., plus 24×47⅝″ bottom rail pieces ≈ 95.25 lin. ft. Grand total ≈ 155.25 lin. ft. Kerf (1/8″ per cut) is accounted for in the cut plan below.</p>
+    <table>
+      <thead><tr><th>What's needed</th><th>Qty</th><th>Each</th><th>Total</th></tr></thead>
+      <tbody>
+        <tr><td>Bottom rail pieces (all 6 boxes)</td><td>24</td><td>47⅝″</td><td>~95.25 lin. ft.</td></tr>
+        <tr><td>Deep box corner posts</td><td>8</td><td>36″</td><td>24 lin. ft.</td></tr>
+        <tr><td>Mid box corner posts</td><td>8</td><td>30″</td><td>20 lin. ft.</td></tr>
+        <tr><td>Shallow box corner posts</td><td>8</td><td>24″</td><td>16 lin. ft.</td></tr>
+        <tr><td><strong>Total</strong></td><td><strong>48 pcs</strong></td><td>—</td><td><strong>~155.25 lin. ft.</strong></td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:13px;margin-bottom:20px;"><strong>Buy requirement: nine 20′ sticks</strong></p>
+    <h3>Verified Cut Plan — includes 1/8″ kerf per cut</h3>
+    <table>
+      <thead><tr><th>Stick(s)</th><th>Cut pattern</th><th>Cuts</th><th>Kerf loss</th><th>Material used</th><th>Remainder</th><th>Output</th></tr></thead>
+      <tbody>
+        <tr><td>Sticks 1–6<br>(6 sticks)</td><td>4×47⅝″ + 1×36″</td><td>5 per stick</td><td>0.625″</td><td>227.125″</td><td>12.875″</td><td>24×47⅝″ bottom rails + 6×36″ deep posts</td></tr>
+        <tr><td>Stick 7</td><td>2×36″ + 6×24″</td><td>7</td><td>0.875″</td><td>216.875″</td><td>23.125″</td><td>Completes 8×36″ deep posts + 6×24″ shallow posts</td></tr>
+        <tr><td>Stick 8</td><td>7×30″ + 1×24″</td><td>7</td><td>0.875″</td><td>234.875″</td><td>5.125″</td><td>7×30″ mid posts + 1×24″ shallow post</td></tr>
+        <tr><td>Stick 9</td><td>1×30″ + 1×24″</td><td>2</td><td>0.25″</td><td>54.25″</td><td>185.75″ (~15.5′)</td><td>Completes 8×30″ mid posts + 8×24″ shallow posts</td></tr>
+      </tbody>
+    </table>
+    <div class="note"><strong>Stick 9 remainder (~15.5′):</strong> Keep as shop stock — useful drops for future projects. Gusset ledges are cut from 1¾″ square tube (section A3), not from this remainder.</div>
+    <div class="note tip"><strong>Cut sequencing tip:</strong> On sticks 1–6, make the 36″ cut first, then the four 48″ cuts — keeps the longest piece free of any prior kerf.</div>
+
+    <!-- A2 -->
+    <h3 style="font-family:'IBM Plex Sans',sans-serif;font-size:16px;font-weight:600;letter-spacing:0.01em;text-transform:none;color:var(--steel-dark);margin-top:40px;margin-bottom:8px;padding-bottom:4px;border-bottom:2px solid var(--steel-pale);">A2 · 1½″×1½″×⅛″ angle iron — top cap frames</h3>
+    <p style="font-size:13px;color:var(--muted);margin-bottom:12px;line-height:1.7;">Four pieces per box at 48″ each with 45° miters, welded into a 48″×48″ frame. Identical for all six boxes. 24 pieces total = 96 lin. ft. net. Kerf note: 5×48″ = 240″ net + 4 kerfs × 1/8″ = 240.5″ consumed — just over one stick. Safest approach: cut 4 pieces per stick (3 cuts, 192.375″ consumed, ~47.6″ remainder) and use the 6th stick for the final 4 pieces. Six sticks gives 24 clean pieces with no tight fits.</p>
+    <table>
+      <thead><tr><th>What's needed</th><th>Qty</th><th>Each</th><th>Total</th></tr></thead>
+      <tbody>
+        <tr><td>Top cap frame pieces — all 6 boxes</td><td>24</td><td>48″ mitered</td><td>96 lin. ft.</td></tr>
+        <tr><td><strong>Total</strong></td><td><strong>24 pcs</strong></td><td>—</td><td><strong>96 lin. ft.</strong></td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:13px;margin-bottom:20px;"><strong>Buy requirement: six 20′ sticks</strong></p>
+    <h3>Verified Cut Plan — includes 1/8″ kerf per cut</h3>
+    <table>
+      <thead><tr><th>Stick(s)</th><th>Cut pattern</th><th>Cuts</th><th>Kerf loss</th><th>Material used</th><th>Remainder</th><th>Output</th></tr></thead>
+      <tbody>
+        <tr><td>Sticks 1–6<br>(6 sticks)</td><td>4 × 48″ per stick</td><td>3 per stick</td><td>0.375″</td><td>192.375″</td><td>47.625″</td><td>4 top cap pieces per stick — 24 total across 6 sticks</td></tr>
+      </tbody>
+    </table>
+    <div class="note tip"><strong>Remainder:</strong> Each stick leaves a clean ~47.6″ drop — good shop stock for future angle iron work.</div>
+
+    <!-- A3 -->
+    <h3 style="font-family:'IBM Plex Sans',sans-serif;font-size:16px;font-weight:600;letter-spacing:0.01em;text-transform:none;color:var(--steel-dark);margin-top:40px;margin-bottom:8px;padding-bottom:4px;border-bottom:2px solid var(--steel-pale);">A3 · 1¾″ square tube — gusset ledges</h3>
+    <p style="font-size:13px;color:var(--muted);margin-bottom:12px;line-height:1.7;">One gusset per corner post, 2″ long, welded inside the post at 12″ from the post bottom. The bottom rail frame rests on the top face of the gusset, transferring soil load directly into the post. Must be square tube — the full flat bearing face is required for proper load transfer. Angle iron offcuts are not suitable. Kerf: 24 pieces × 2″ = 48″ net + 23 kerfs × 1/8″ = 2.875″ = ~50.875″ total consumed.</p>
+    <table>
+      <thead><tr><th>What's needed</th><th>Qty</th><th>Each</th><th>Total (with kerf)</th></tr></thead>
+      <tbody>
+        <tr><td>Gusset ledges — all 6 boxes</td><td>24</td><td>2″</td><td>~4.25 lin. ft.</td></tr>
+        <tr><td><strong>Total</strong></td><td><strong>24 pcs</strong></td><td>—</td><td><strong>~4.25 lin. ft.</strong></td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:13px;margin-bottom:20px;"><strong>Buy requirement: one 6′ drop</strong></p>
+    <h3>Verified Cut Plan — includes 1/8″ kerf per cut</h3>
+    <table>
+      <thead><tr><th>Stick(s)</th><th>Cut pattern</th><th>Cuts</th><th>Kerf loss</th><th>Material used</th><th>Remainder</th><th>Output</th></tr></thead>
+      <tbody>
+        <tr><td>One 6′ drop (72″)</td><td>24 × 2″ pieces</td><td>23</td><td>2.875″</td><td>50.875″</td><td>21.125″</td><td>All 24 gusset ledges</td></tr>
+      </tbody>
+    </table>
+
+    <!-- A4 -->
+    <h3 style="font-family:'IBM Plex Sans',sans-serif;font-size:16px;font-weight:600;letter-spacing:0.01em;text-transform:none;color:var(--steel-dark);margin-top:40px;margin-bottom:8px;padding-bottom:4px;border-bottom:2px solid var(--steel-pale);">A4 · 1½″×3/16″ flat bar — floor X-rib support</h3>
+    <p style="font-size:13px;color:var(--muted);margin-bottom:12px;line-height:1.7;">Two bars per box in an X pattern, each nominally 48″, welded on-edge to the underside of the bottom rail pieces before site installation. 12 pieces total. Kerf is not a concern — bar ends do not need to reach the full interior edge of the bottom rail; landing within 1/16″–1/8″ short loses no meaningful support. Each 20′ stick yields exactly 5 pieces (5×48″ = 240″). Three sticks yields 15 pieces — 12 needed, 3 spare. Half-lap joint note: the two bars cut at their midpoint and welded onto the continuous bar gain 3/16″ at the joint from the thickness of the bar they butt against — they sit flush within the frame without any special end trimming.</p>
+    <table>
+      <thead><tr><th>What's needed</th><th>Qty</th><th>Each</th><th>Total</th></tr></thead>
+      <tbody>
+        <tr><td>Floor X-rib bars — all 6 boxes</td><td>12</td><td>~48″</td><td>~48 lin. ft.</td></tr>
+        <tr><td><strong>Total</strong></td><td><strong>12 pcs</strong></td><td>—</td><td><strong>~48 lin. ft.</strong></td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:13px;margin-bottom:20px;"><strong>Buy requirement: three 20′ sticks</strong></p>
+    <h3>Cut Plan — kerf not a factor</h3>
+    <table>
+      <thead><tr><th>Stick(s)</th><th>Cut pattern</th><th>Cuts</th><th>Material used</th><th>Remainder</th><th>Output</th></tr></thead>
+      <tbody>
+        <tr><td>Sticks 1–3<br>(3 sticks)</td><td>5 × 48″ per stick</td><td>4 per stick</td><td>240″ (exact)</td><td>0″ net · kerf absorbed by end tolerance</td><td>5 X-rib bars per stick — 15 total, 12 needed, 3 spare</td></tr>
+      </tbody>
+    </table>
+
+    <!-- ── SECTION B: CORRUGATED PANELS ── -->
+    <h2 style="font-size:22px;margin-top:40px;margin-bottom:4px;color:var(--steel-dark);">B — Corrugated Steel Panels — Box Sides</h2>
+    <p style="font-size:13px;color:var(--muted);margin-bottom:12px;line-height:1.7;">29-gauge galvanized corrugated steel, horizontal corrugation (ribs run side to side). Four panels per box — one per side. Panel height matches box soil depth. All panels purchased as standard 3′×8′ sheets and ripped to height on site.</p>
+    <table>
+      <thead><tr><th>What's needed</th><th>Sheet size purchased</th><th>Panel cut size</th><th>Panels per sheet</th><th>Sheets for ×2 boxes</th></tr></thead>
+      <tbody>
+        <tr><td>Deep box panels (×2 boxes)</td><td>3′×8′ (36″×96″)</td><td>24″ h × ≈47⅝″ w</td><td>2 — 12″ offcut strip remaining</td><td>4 sheets</td></tr>
+        <tr><td>Mid box panels (×2 boxes)</td><td>3′×8′ (36″×96″)</td><td>18″ h × ≈47⅝″ w</td><td>2 — zero waste</td><td>4 sheets</td></tr>
+        <tr><td>Shallow box panels (×2 boxes)</td><td>3′×8′ (36″×96″)</td><td>12″ h × ≈47⅝″ w</td><td>2 from offcut strips of Deep sheets — zero added waste</td><td>0 extra sheets</td></tr>
+        <tr><td><strong>Total</strong></td><td>—</td><td>—</td><td>—</td><td><strong>8 sheets</strong></td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:13px;margin-bottom:20px;"><strong>Buy requirement: four 3′×8′ sheets for Deep boxes · four 3′×8′ sheets for Mid boxes · zero extra sheets for Shallow boxes (Shallow panels cut from Deep sheet offcuts) — eight sheets total</strong></p>
+    <div class="note tip"><strong>Second pair width:</strong> Cut the first pair of panels per side to ≈47⅝″. Cut the second pair to the actual measured gap after the first pair is installed — measure in place before cutting. Applies to all three box types.</div>
+
+    <!-- ── SECTION C: EXPANDED METAL ── -->
+    <h2 style="font-size:22px;margin-top:40px;margin-bottom:4px;color:var(--steel-dark);">C — Expanded Metal — Box Floors</h2>
+    <p style="font-size:13px;color:var(--muted);margin-bottom:12px;line-height:1.7;">Galvanized flattened expanded metal, ¾″×#9 SWD. One sheet per box, cut to fit the actual interior dimension of the bottom rail frame. Free-draining, gopher-proof, fully ventilated below.</p>
+    <table>
+      <thead><tr><th>What's needed</th><th>Cut size per box</th><th>Qty</th></tr></thead>
+      <tbody>
+        <tr><td>Floor sheets — all 6 boxes</td><td>≈47⅝″×47⅝″ — measure actual interior before cutting</td><td>6 sheets</td></tr>
+        <tr><td><strong>Total</strong></td><td>—</td><td><strong>6 sheets</strong></td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:13px;margin-bottom:20px;"><strong>Buy requirement: six cut-to-size sheets (order from steel supplier with interior dimension confirmed on site)</strong></p>
+
+    <!-- ── SECTION D: HARDWARE & FASTENERS ── -->
+    <h2 style="font-size:22px;margin-top:40px;margin-bottom:4px;color:var(--steel-dark);">D — Hardware &amp; Fasteners</h2>
+    <table>
+      <thead><tr><th>Item</th><th>Spec</th><th>Total qty</th></tr></thead>
+      <tbody>
+        <tr><td>Panel-to-post screws</td><td>#10 × 3/4″ hex head sheet metal screw, EPDM washer, galvanized — into pre-drilled 5/32″ pilot holes in 3/16″ angle iron post legs</td><td>~180</td></tr>
+        <tr><td>Panel-to-top-cap screws</td><td>#10 × 3/4″ hex head sheet metal screw, EPDM washer, galvanized — into pre-drilled 5/32″ pilot holes in cap vertical leg</td><td>~75</td></tr>
+        <tr><td>Panel-to-bottom-rail screws</td><td>#10 × 3/4″ hex head sheet metal screw, EPDM washer, galvanized — into pre-drilled 5/32″ pilot holes in bottom rail vertical leg</td><td>~75</td></tr>
+        <tr><td>Frame-to-post bolts</td><td>¼″ × ¾″ hex, grade 5, galvanized — 4 corners × 2 frames × 2 bolts × 6 boxes</td><td>96 sets (bolt + washer + nylon lock nut)</td></tr>
+        <tr><td>Floor wire ties</td><td>Galvanized</td><td>~90</td></tr>
+        <tr><td>Landscape fabric</td><td>3-oz woven — floor liner only (one sheet per box, cut to interior dimension with ~4″ fold-up at edges)</td><td>~100 sq ft</td></tr>
+      </tbody>
+    </table>
+    <div class="note warn"><strong>Pre-drilling required:</strong> Standard self-drilling (Tek) screws are not rated for 3/16″ steel — their drill points are designed for up to ~10-gauge (0.135″). Use a 5/32″ drill bit to pre-drill all panel attachment holes in the angle iron legs (post faces, cap vertical leg, bottom rail vertical leg) while frames are on the bench in the shop. This is cleaner and more precise than driving screws in the field.</div>
+
+    <h2 style="font-size:22px;margin-top:40px;margin-bottom:4px;color:var(--steel-dark);">E — Finishes</h2>
+    <table>
+      <thead><tr><th>Item</th><th>Purpose</th><th>Qty</th></tr></thead>
+      <tbody>
+        <tr><td>Cold galvanizing compound</td><td>Zinc-rich primer on all cut ends, ground areas, weld zones</td><td>3–4 spray cans</td></tr>
+        <tr><td>Self-etching primer</td><td>Bonds to zinc-coated and bare metal; adhesion layer for topcoat</td><td>3–4 spray cans</td></tr>
+        <tr><td>Exterior enamel — matte black</td><td>Final colour and weather protection</td><td>1–2 quarts</td></tr>
+      </tbody>
+    </table>
+    <div class="note"><strong>Finish sequence:</strong> bare/ground metal → cold galvanizing (cure fully) → self-etching primer → enamel topcoat. Never skip a step.</div>
+
+    <h2 style="font-size:22px;margin-top:40px;margin-bottom:4px;color:var(--steel-dark);">F — Soil &amp; Growing Medium</h2>
+    <table>
+      <thead><tr><th>Box type</th><th>Per box</th><th>For ×2 boxes</th></tr></thead>
+      <tbody>
+        <tr><td>Deep 24″ ×2</td><td>~2.37 cu yd</td><td>~4.7 cu yd</td></tr>
+        <tr><td>Mid 18″ ×2</td><td>~1.78 cu yd</td><td>~3.6 cu yd</td></tr>
+        <tr><td>Shallow 12″ ×2</td><td>~1.19 cu yd</td><td>~2.4 cu yd</td></tr>
+        <tr><td><strong>Total (6 boxes)</strong></td><td>—</td><td><strong>~10.7 cu yd</strong></td></tr>
+      </tbody>
+    </table>
+    <div class="note warn"><strong>Soil order:</strong> ~10.7 cu yd — order bulk delivery from a landscape supply company. Specify vegetable garden mix with good drainage and high organic content.</div>
+    <h2 style="font-size:22px;margin-top:40px;margin-bottom:4px;color:var(--steel-dark);">Complete Buy List — All Materials</h2>
+    <p style="font-size:13px;color:var(--muted);margin-bottom:12px;line-height:1.7;">All purchase requirements across every section consolidated in one place. Bring this list to your steel supplier, lumber yard, and hardware store.</p>
+
+    <h3>Steel — one order, one supplier</h3>
+    <table>
+      <thead><tr><th>Item</th><th>Spec</th><th>Buy</th></tr></thead>
+      <tbody>
+        <tr><td>A1 · Angle iron — posts &amp; bottom rails</td><td>2″×2″×3/16″ angle iron, 20′ sticks</td><td><strong>9 sticks</strong></td></tr>
+        <tr><td>A2 · Angle iron — top cap frames</td><td>1½″×1½″×⅛″ angle iron, 20′ sticks</td><td><strong>6 sticks</strong></td></tr>
+        <tr><td>A3 · Square tube — gusset ledges</td><td>1¾″ square tube, any length</td><td><strong>1 × 6′ drop</strong></td></tr>
+        <tr><td>A4 · Flat bar — floor X-ribs</td><td>1½″×3/16″ flat bar, 20′ sticks</td><td><strong>3 sticks</strong></td></tr>
+        <tr><td>B · Corrugated panels — Deep boxes</td><td>29-ga galv. corrugated, 3′×8′ sheets</td><td><strong>4 sheets</strong></td></tr>
+        <tr><td>B · Corrugated panels — Mid boxes</td><td>29-ga galv. corrugated, 3′×8′ sheets</td><td><strong>4 sheets</strong></td></tr>
+        <tr><td>B · Corrugated panels — Shallow boxes</td><td>Cut from Deep sheet offcuts — no extra sheets needed</td><td><strong>0 sheets</strong></td></tr>
+        <tr><td>C · Expanded metal — box floors</td><td>Galv. flattened expanded metal, ¾″×#9 SWD, cut to ≈47⅝″×47⅝″</td><td><strong>6 cut-to-size sheets</strong></td></tr>
+      </tbody>
+    </table>
+
+    <h3>Hardware — one order, hardware store or fastener supplier</h3>
+    <table>
+      <thead><tr><th>Item</th><th>Spec</th><th>Buy</th></tr></thead>
+      <tbody>
+        <tr><td>Panel attachment screws</td><td>#10 × 3/4″ hex head sheet metal screw, EPDM washer, galvanized</td><td><strong>~330 screws + washers</strong></td></tr>
+        <tr><td>Frame-to-post bolts</td><td>¼″ × ¾″ hex head, grade 5, galvanized</td><td><strong>96 sets (bolt + washer + nylon lock nut)</strong></td></tr>
+        <tr><td>Floor wire ties</td><td>Galvanized</td><td><strong>~90</strong></td></tr>
+        <tr><td>Landscape fabric</td><td>3-oz woven</td><td><strong>~100 sq ft</strong></td></tr>
+        <tr><td>Pilot hole drill bit</td><td>5/32″ — for pre-drilling panel attachment holes in 3/16″ angle iron</td><td><strong>1–2 bits</strong></td></tr>
+      </tbody>
+    </table>
+
+    <h3>Finishes — spray cans or quart cans, hardware store</h3>
+    <table>
+      <thead><tr><th>Item</th><th>Spec</th><th>Buy</th></tr></thead>
+      <tbody>
+        <tr><td>Cold galvanizing compound</td><td>Zinc-rich spray — Rust-Oleum or equivalent</td><td><strong>3–4 spray cans</strong></td></tr>
+        <tr><td>Self-etching primer</td><td>Metal self-etching primer spray</td><td><strong>3–4 spray cans</strong></td></tr>
+        <tr><td>Exterior enamel — matte black</td><td>Oil-based exterior enamel, matte or satin black</td><td><strong>1–2 quarts</strong></td></tr>
+      </tbody>
+    </table>
+
+    <h3>Soil — bulk delivery, landscape supplier</h3>
+    <table>
+      <thead><tr><th>Item</th><th>Spec</th><th>Buy</th></tr></thead>
+      <tbody>
+        <tr><td>Vegetable garden growing mix</td><td>High organic content, good drainage — suitable for tomatoes. Bulk delivery recommended.</td><td><strong>~10.7 cubic yards</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ══ ASSEMBLY ══ -->
+  <div id="panel-assembly" class="panel" style="display:none">
+    <h2>Assembly Order</h2>
+    <p class="section-intro">All cutting is done first — angle iron, flat bar, square tube, corrugated panels. Then all welding and drilling in the shop. Then finishing. Then site installation. This sequence means you never pick up a grinder or drill press mid-assembly.</p>
+
+    <h3>Phase 1 — All cuts, in shop</h3>
+    <div class="steps">
+      <div class="step"><div class="step-num">01</div><div class="step-body"><strong>Cut all 2″×2″×3/16″ angle iron — corner posts &amp; bottom rail pieces (9 sticks)</strong><p>Follow the verified 9-stick cut plan in the Materials tab, which accounts for 1/8″ kerf per cut. Sticks 1–6: 4×47⅝″ bottom rail pieces + 1×36″ post each. Stick 7: 2×36″ + 6×24″. Stick 8: 7×30″ + 1×24″. Stick 9: 1×30″ + 1×24″. Keep the ~15.5′ remainder from stick 9 as shop stock for gusset cuts in step 03. Bottom rail pieces get 45° miters on both ends. Corner posts are square cut. Mark 12″ floor line on every post. Label post groups: 36″ (Deep), 30″ (Mid), 24″ (Shallow).</p></div></div>
+      <div class="step"><div class="step-num">02</div><div class="step-body"><strong>Cut all 1½″×1½″×⅛″ angle iron — top cap pieces (6 sticks)</strong><p>4 pieces per box at 48″ with 45° miters on both ends. 24 pieces total across all 6 boxes. Follow the 6-stick cut plan in the Materials tab — 4 pieces per stick, 3 cuts per stick, ~47.6″ remainder per stick kept as shop stock.</p></div></div>
+      <div class="step"><div class="step-num">03</div><div class="step-body"><strong>Cut gusset ledges from 1¾″ square tube — 24 pieces at 2″</strong><p>Cut from the one 6′ drop (or the stick 9 remainder from step 01 if it's square tube — confirm stock). 24 cuts × 2″ = ~50.9″ consumed including kerf. One gusset per corner post.</p></div></div>
+      <div class="step"><div class="step-num">04</div><div class="step-body"><strong>Cut X-rib flat bars — 1½″×3/16″ flat bar (3 sticks)</strong><p>5 pieces per stick at 48″, 4 cuts per stick. 12 pieces needed across all 6 boxes, 15 produced — 3 spare. Square cuts, no miter.</p></div></div>
+      <div class="step"><div class="step-num">05</div><div class="step-body"><strong>Cut corrugated steel panels to height</strong><p>Rip 4×8 sheets to panel height for each box type — 24″ for Deep, 18″ for Mid, 12″ for Shallow — ribs running horizontal. Cut first pair of each box side to ≈47⅝″ wide. Hold second pair uncut until first pair is installed on site and actual gap is measured.</p></div></div>
+    </div>
+
+    <h3>Phase 2 — Shop fabrication: drilling, welding, finishing</h3>
+    <div class="steps">
+      <div class="step"><div class="step-num">06</div><div class="step-body"><strong>Prep X-rib flat bars</strong><p>Grind top corner back 3/16″ for first 2″ on all four ends of every bar. Grind smooth radius on all bottom outer corners. Cut center half-lap notch ¾″ deep on each bar (one from top, one from bottom). Interlock pairs flush, weld half-lap joints. Apply cold galvanizing to all ground and cut areas. Set aside 12 completed X assemblies.</p></div></div>
+      <div class="step"><div class="step-num">07</div><div class="step-body"><strong>Drill and finish bottom rail pieces (all 24)</strong><p>Drill two ¼″ bolt holes through the vertical leg at each end — 2 holes per end, 4 per piece. Pre-drill 5/32″ pilot holes in the vertical leg face for panel attachment — 2–3 holes per piece, evenly spaced. Weld one X-rib assembly to the underside of each set of four rail pieces (horizontal leg down). Apply cold galvanizing, primer, enamel.</p></div></div>
+      <div class="step"><div class="step-num">08</div><div class="step-body"><strong>Weld gusset ledges to corner posts</strong><p>Weld one 2″ square tube gusset inside each corner post at exactly 12″ from the post bottom — same position on all three post lengths. Two welds per gusset (base and one side). Confirm gusset top face is level across all four posts for each box set.</p></div></div>
+      <div class="step"><div class="step-num">09</div><div class="step-body"><strong>Drill and finish corner posts (all 24)</strong><p>Drill ¼″ bolt holes for top cap attachment near the top of each post. Drill ¼″ bolt holes for bottom rail attachment just above each gusset, on the interior face. Pre-drill 5/32″ pilot holes in post leg faces for panel attachment — 2–3 holes per face, aligned to corrugation peaks. Apply cold galvanizing, primer, enamel. Keep groups labeled.</p></div></div>
+      <div class="step"><div class="step-num">10</div><div class="step-body"><strong>Weld and finish top cap frames (all 6)</strong><p>Assemble 4 mitered 48″ pieces per frame on a flat surface. Tack-weld each inside corner, check square, full fillet weld all four inside corners. Grind exterior miter seams flush. Drill ¼″ bolt holes through vertical leg at each corner for post attachment. Pre-drill 5/32″ pilot holes in vertical leg face for panel attachment — 2–3 holes per side. Apply cold galvanizing, primer, enamel. Cure fully before handling.</p></div></div>
+    </div>
+
+    <h3>Phase 3 — Site installation</h3>
+    <div class="steps">
+      <div class="step"><div class="step-num">11</div><div class="step-body"><strong>Set corner posts on site</strong><p>Position four posts for one box in a 48″×48″ square. Confirm with framing square and tape measure. Shim legs as needed on the concrete patio surface.</p></div></div>
+      <div class="step"><div class="step-num">12</div><div class="step-body"><strong>Install bottom rail pieces</strong><p>Set each of the four rail pieces inside the corner posts, horizontal leg down, resting on the gusset ledges at 12″ above grade. Fasten with ¼″ × ¾″ grade 5 bolts, washers, nylon lock nuts — 2 per end. Level before fully tightening.</p></div></div>
+      <div class="step"><div class="step-num">13</div><div class="step-body"><strong>Bolt top cap frame</strong><p>Set cap frame down over posts on the outside. Fasten with ¼″ × ¾″ grade 5 bolts, washers, nylon lock nuts — 2 per corner. Check square and level.</p></div></div>
+      <div class="step"><div class="step-num">14</div><div class="step-body"><strong>Install expanded metal floor</strong><p>Cut floor sheet to actual interior dimension. Lay on X-ribs and bottom rail horizontal legs. Wire-tie at ribs and corners — ~15 ties per box.</p></div></div>
+      <div class="step"><div class="step-num">15</div><div class="step-body"><strong>Lay landscape fabric on floor</strong><p>Cut 3-oz fabric to fit interior. Lay on expanded metal, fold edges up against posts ~4″, wire-tie to hold in place.</p></div></div>
+      <div class="step"><div class="step-num">16</div><div class="step-body"><strong>Cut and attach corrugated panels</strong><p>Install first pair of panels (pre-cut to ≈47⅝″ wide): screw into post faces (2–3 per face), into top cap vertical leg at top, into bottom rail vertical leg at bottom. Measure actual gap for second pair, cut to fit, install. Ribs must run horizontal on all panels.</p></div></div>
+      <div class="step"><div class="step-num">17</div><div class="step-body"><strong>Fill</strong><p>Fill with growing medium in layers, tamping lightly between layers. Top off after soil settles in first week of watering. Do not fill until box is in permanent position — filled weight is 550–1,300 lbs depending on depth.</p></div></div>
+    </div>
+
+    <div class="note"><strong>Batch efficiency:</strong> Complete all Phase 1 cuts for all 6 boxes before starting any welding. Complete all Phase 2 shop work before moving anything to site. This minimizes tool changes and keeps the shop floor clear.</div>
+    <div class="note warn"><strong>Filled weights:</strong> 24″ Deep: ~1,100–1,300 lbs. 18″ Mid: ~820–970 lbs. 12″ Shallow: ~550–640 lbs. Place all boxes in final position before filling — they are not moving after that.</div>
+    <div class="note tip"><strong>Layout idea:</strong> Group the two 24″ deep boxes together for the tomatoes, the two 18″ mid boxes for cucumbers and peppers, the two 12″ shallow boxes where they'll get good light for the greens. Leave ≥24″ between boxes for access.</div>
+  </div>
+
+  <!-- ══ COMPONENTS ══ -->
+  <div id="panel-components" class="panel" style="display:none">
+    <h2>Component Drawings</h2>
+    <p class="section-intro">Fabrication reference for all major components. Everything shown here — angle iron frames, panels, floor — appears in one place for shop reference.</p>
+
+    <h3>Bottom rail piece — qty 4 per box · all 6 boxes identical · fits inside corner posts</h3>
+    <div class="diagram-wrap">
+      <svg viewBox="0 0 680 370" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="arr-c1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </marker>
+        </defs>
+        <polygon points="100,210 560,178 560,198 100,230" fill="#4A5A65" stroke="#2C3840" stroke-width="1.5"/>
+        <polygon points="100,230 132,250 540,218 560,198" fill="#5A6A75" stroke="#2C3840" stroke-width="1.5"/>
+        <line x1="100" y1="230" x2="132" y2="250" stroke="#2C3840" stroke-width="2.5"/>
+        <line x1="560" y1="198" x2="540" y2="218" stroke="#2C3840" stroke-width="2.5"/>
+        <line x1="100" y1="230" x2="560" y2="198" stroke="#2C3840" stroke-width="0.8" opacity="0.5"/>
+        <line x1="132" y1="250" x2="540" y2="218" stroke="#2C3840" stroke-width="1.5"/>
+        <line x1="100" y1="210" x2="100" y2="230" stroke="#2C3840" stroke-width="1.5"/>
+        <line x1="560" y1="178" x2="560" y2="198" stroke="#2C3840" stroke-width="1.5"/>
+        <circle cx="107" cy="215" r="2.5" fill="#F4F2EE" stroke="#2C3840" stroke-width="0.8"/>
+        <circle cx="107" cy="224" r="2.5" fill="#F4F2EE" stroke="#2C3840" stroke-width="0.8"/>
+        <circle cx="553" cy="183" r="2.5" fill="#F4F2EE" stroke="#2C3840" stroke-width="0.8"/>
+        <circle cx="553" cy="192" r="2.5" fill="#F4F2EE" stroke="#2C3840" stroke-width="0.8"/>
+        <line x1="100" y1="270" x2="560" y2="238" stroke="#787068" stroke-width="0.8" marker-start="url(#arr-c1)" marker-end="url(#arr-c1)"/>
+        <text font-family="sans-serif" font-size="12" x="330" y="264" text-anchor="middle" fill="#787068">47⅝″  (clear span between post inner faces)</text>
+        <line x1="68" y1="210" x2="68" y2="230" stroke="#787068" stroke-width="0.8" marker-start="url(#arr-c1)" marker-end="url(#arr-c1)"/>
+        <text font-family="sans-serif" font-size="11" x="58" y="224" text-anchor="end" fill="#787068">2″</text>
+        <line x1="68" y1="230" x2="68" y2="250" stroke="#787068" stroke-width="0.8" marker-start="url(#arr-c1)" marker-end="url(#arr-c1)"/>
+        <text font-family="sans-serif" font-size="11" x="58" y="244" text-anchor="end" fill="#787068">2″</text>
+        <line x1="116" y1="240" x2="60" y2="175" stroke="#B0A898" stroke-width="0.6" stroke-dasharray="4 3"/>
+        <text font-family="sans-serif" font-size="11" x="63" y="171" fill="#2C3840">45° miter · both ends · no slits</text>
+        <line x1="118" y1="218" x2="230" y2="160" stroke="#787068" stroke-width="0.7" stroke-dasharray="4 3"/>
+        <text font-family="sans-serif" font-size="12" x="233" y="156" fill="#C04A1A">¼″ bolt holes × 2 per end · bolts to post interior face</text>
+        <line x1="330" y1="190" x2="430" y2="142" stroke="#B0A898" stroke-width="0.6" stroke-dasharray="4 3"/>
+        <text font-family="sans-serif" font-size="11" x="433" y="138" fill="#4A5A65">Vertical leg · faces inward · ¼″ bolt holes × 2 per end</text>
+        <line x1="330" y1="228" x2="430" y2="262" stroke="#B0A898" stroke-width="0.6" stroke-dasharray="4 3"/>
+        <text font-family="sans-serif" font-size="11" x="433" y="258" fill="#5A6A75">Horizontal leg · faces down · rests on gusset · floor load transfers here</text>
+        <text font-family="sans-serif" font-size="12" font-weight="600" x="100" y="310" fill="#2C3840">2″ × 2″ × 3/16″ angle iron · 47⅝″ · qty 4 per box · all 6 boxes identical</text>
+        <text font-family="sans-serif" font-size="11" x="100" y="326" fill="#787068">Fits inside corner posts · full cross-section preserved · no slits · bolts to post interior face</text>
+      </svg>
+    </div>
+
+    <h3>Top cap piece — qty 4 per box · all 6 boxes identical</h3>
+    <div class="diagram-wrap">
+      <svg viewBox="0 0 680 330" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="arr-c2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </marker>
+        </defs>
+        <polygon points="100,210 142,199 512,173 560,178" fill="#5A6A75" stroke="#2C3840" stroke-width="1.5"/>
+        <line x1="142" y1="199" x2="512" y2="173" stroke="#2C3840" stroke-width="1.5"/>
+        <line x1="100" y1="210" x2="142" y2="199" stroke="#2C3840" stroke-width="2.5"/>
+        <line x1="560" y1="178" x2="512" y2="173" stroke="#2C3840" stroke-width="2.5"/>
+        <polygon points="100,210 560,178 560,198 100,230" fill="#4A5A65" stroke="#2C3840" stroke-width="1.5"/>
+        <line x1="100" y1="210" x2="100" y2="230" stroke="#2C3840" stroke-width="1.5"/>
+        <line x1="560" y1="178" x2="560" y2="198" stroke="#2C3840" stroke-width="1.5"/>
+        <line x1="100" y1="210" x2="560" y2="178" stroke="#2C3840" stroke-width="1.2"/>
+        <circle cx="107" cy="215" r="2.5" fill="#F4F2EE" stroke="#2C3840" stroke-width="0.8"/>
+        <circle cx="107" cy="224" r="2.5" fill="#F4F2EE" stroke="#2C3840" stroke-width="0.8"/>
+        <circle cx="553" cy="183" r="2.5" fill="#F4F2EE" stroke="#2C3840" stroke-width="0.8"/>
+        <circle cx="553" cy="192" r="2.5" fill="#F4F2EE" stroke="#2C3840" stroke-width="0.8"/>
+        <line x1="100" y1="252" x2="560" y2="220" stroke="#787068" stroke-width="0.8" marker-start="url(#arr-c2)" marker-end="url(#arr-c2)"/>
+        <text font-family="sans-serif" font-size="12" x="330" y="246" text-anchor="middle" fill="#787068">48″  (4′-0″)</text>
+        <line x1="68" y1="210" x2="68" y2="230" stroke="#787068" stroke-width="0.8" marker-start="url(#arr-c2)" marker-end="url(#arr-c2)"/>
+        <text font-family="sans-serif" font-size="11" x="58" y="224" text-anchor="end" fill="#787068">1½″</text>
+        <line x1="68" y1="202" x2="68" y2="210" stroke="#787068" stroke-width="0.8" marker-start="url(#arr-c2)" marker-end="url(#arr-c2)"/>
+        <text font-family="sans-serif" font-size="11" x="58" y="209" text-anchor="end" fill="#787068">1½″</text>
+        <line x1="120" y1="205" x2="60" y2="158" stroke="#B0A898" stroke-width="0.6" stroke-dasharray="4 3"/>
+        <text font-family="sans-serif" font-size="11" x="63" y="154" fill="#2C3840">45° miter on horizontal leg · both ends · no slits</text>
+        <line x1="330" y1="186" x2="430" y2="148" stroke="#B0A898" stroke-width="0.6" stroke-dasharray="4 3"/>
+        <text font-family="sans-serif" font-size="11" x="433" y="144" fill="#5A6A75">Horizontal leg · faces up · hand rest surface</text>
+        <line x1="330" y1="218" x2="430" y2="248" stroke="#B0A898" stroke-width="0.6" stroke-dasharray="4 3"/>
+        <text font-family="sans-serif" font-size="11" x="433" y="244" fill="#4A5A65">Vertical leg · faces outward · ¼″ bolt holes × 2 per end</text>
+        <text font-family="sans-serif" font-size="12" font-weight="600" x="100" y="298" fill="#2C3840">1½″ × 1½″ × ⅛″ angle iron · 48″ · qty 4 per box · all 6 boxes identical · no slits</text>
+      </svg>
+    </div>
+
+    <h3>Corrugated steel side panel — qty 4 per box · height varies by box type</h3>
+    <div class="diagram-wrap">
+      <svg viewBox="0 0 680 360" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="arr-c4" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </marker>
+        </defs>
+        <!-- Panel body -->
+        <rect x="80" y="60" width="440" height="200" fill="#D8D4CC" stroke="#1A1E20" stroke-width="1.2"/>
+        <!-- Horizontal corrugation ribs — evenly spaced across height -->
+        <line x1="80" y1="77" x2="520" y2="77" stroke="#B0ABA2" stroke-width="1.2"/>
+        <line x1="80" y1="94" x2="520" y2="94" stroke="#B0ABA2" stroke-width="1.2"/>
+        <line x1="80" y1="111" x2="520" y2="111" stroke="#B0ABA2" stroke-width="1.2"/>
+        <line x1="80" y1="128" x2="520" y2="128" stroke="#B0ABA2" stroke-width="1.2"/>
+        <line x1="80" y1="145" x2="520" y2="145" stroke="#B0ABA2" stroke-width="1.2"/>
+        <line x1="80" y1="162" x2="520" y2="162" stroke="#B0ABA2" stroke-width="1.2"/>
+        <line x1="80" y1="179" x2="520" y2="179" stroke="#B0ABA2" stroke-width="1.2"/>
+        <line x1="80" y1="196" x2="520" y2="196" stroke="#B0ABA2" stroke-width="1.2"/>
+        <line x1="80" y1="213" x2="520" y2="213" stroke="#B0ABA2" stroke-width="1.2"/>
+        <line x1="80" y1="230" x2="520" y2="230" stroke="#B0ABA2" stroke-width="1.2"/>
+        <line x1="80" y1="247" x2="520" y2="247" stroke="#B0ABA2" stroke-width="1.2"/>
+        <!-- Width dimension -->
+        <line x1="80" y1="284" x2="520" y2="284" stroke="#787068" stroke-width="0.8" marker-start="url(#arr-c4)" marker-end="url(#arr-c4)"/>
+        <text font-family="sans-serif" font-size="12" x="300" y="298" text-anchor="middle" fill="#787068">≈47⅝″ first pair · second pair measured to actual gap</text>
+        <!-- Height dimension -->
+        <line x1="46" y1="60" x2="46" y2="260" stroke="#787068" stroke-width="0.8" marker-start="url(#arr-c4)" marker-end="url(#arr-c4)"/>
+        <text font-family="sans-serif" font-size="11" x="36" y="163" text-anchor="middle" transform="rotate(-90,36,163)" fill="#787068">height varies</text>
+        <!-- Height callout boxes -->
+        <rect x="540" y="68" width="118" height="18" rx="2" fill="#F4F2EE" stroke="#C04A1A" stroke-width="1"/>
+        <text font-family="sans-serif" font-size="11" x="599" y="81" text-anchor="middle" fill="#C04A1A">Deep: 24″</text>
+        <rect x="540" y="92" width="118" height="18" rx="2" fill="#F4F2EE" stroke="#2D5F3F" stroke-width="1"/>
+        <text font-family="sans-serif" font-size="11" x="599" y="105" text-anchor="middle" fill="#2D5F3F">Mid: 18″</text>
+        <rect x="540" y="116" width="118" height="18" rx="2" fill="#F4F2EE" stroke="#4A5A65" stroke-width="1"/>
+        <text font-family="sans-serif" font-size="11" x="599" y="129" text-anchor="middle" fill="#4A5A65">Shallow: 12″</text>
+        <!-- Corrugation direction callout -->
+        <line x1="300" y1="162" x2="300" y2="145" stroke="#B0A898" stroke-width="0.6" stroke-dasharray="4 3"/>
+        <line x1="300" y1="162" x2="530" y2="162" stroke="#B0A898" stroke-width="0.6" stroke-dasharray="4 3"/>
+        <text font-family="sans-serif" font-size="11" x="533" y="158" fill="#787068">Ribs run horizontal</text>
+        <text font-family="sans-serif" font-size="11" x="533" y="171" fill="#787068">(side to side)</text>
+        <!-- Caption -->
+        <text font-family="sans-serif" font-size="12" font-weight="600" x="80" y="328" fill="#2C3840">29-ga galvanized corrugated steel · horizontal corrugation · qty 4 per box</text>
+        <text font-family="sans-serif" font-size="11" x="80" y="344" fill="#787068">Ripped from 4′×8′ sheets · G-90 galvanized or Galvalume · 2½″ pitch ¾″ depth profile</text>
+      </svg>
+    </div>
+
+    <h3>Expanded metal floor — qty 1 per box · all 6 boxes identical</h3>
+    <div class="diagram-wrap">
+      <svg viewBox="0 0 680 380" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="arr-c5" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </marker>
+          <pattern id="xmetal" x="0" y="0" width="14" height="10" patternUnits="userSpaceOnUse">
+            <!-- Diamond mesh pattern representing expanded metal -->
+            <ellipse cx="7" cy="5" rx="5" ry="3" fill="none" stroke="#8A9AA8" stroke-width="0.8"/>
+          </pattern>
+        </defs>
+        <!-- Floor sheet — square, slight iso tilt to show it's flat -->
+        <polygon points="100,80 480,80 520,120 140,120" fill="url(#xmetal)" stroke="#4A5A65" stroke-width="1.5"/>
+        <!-- Top face fill with pattern visible -->
+        <polygon points="100,80 480,80 520,120 140,120" fill="#C8D4DC" opacity="0.3" stroke="none"/>
+        <!-- Re-draw border on top -->
+        <polygon points="100,80 480,80 520,120 140,120" fill="none" stroke="#4A5A65" stroke-width="1.5"/>
+        <!-- Grid lines to suggest mesh -->
+        <line x1="156" y1="80" x2="196" y2="120" stroke="#8A9AA8" stroke-width="0.5" opacity="0.6"/>
+        <line x1="212" y1="80" x2="252" y2="120" stroke="#8A9AA8" stroke-width="0.5" opacity="0.6"/>
+        <line x1="268" y1="80" x2="308" y2="120" stroke="#8A9AA8" stroke-width="0.5" opacity="0.6"/>
+        <line x1="324" y1="80" x2="364" y2="120" stroke="#8A9AA8" stroke-width="0.5" opacity="0.6"/>
+        <line x1="380" y1="80" x2="420" y2="120" stroke="#8A9AA8" stroke-width="0.5" opacity="0.6"/>
+        <line x1="436" y1="80" x2="476" y2="120" stroke="#8A9AA8" stroke-width="0.5" opacity="0.6"/>
+        <line x1="184" y1="80" x2="144" y2="120" stroke="#8A9AA8" stroke-width="0.5" opacity="0.6"/>
+        <line x1="240" y1="80" x2="200" y2="120" stroke="#8A9AA8" stroke-width="0.5" opacity="0.6"/>
+        <line x1="296" y1="80" x2="256" y2="120" stroke="#8A9AA8" stroke-width="0.5" opacity="0.6"/>
+        <line x1="352" y1="80" x2="312" y2="120" stroke="#8A9AA8" stroke-width="0.5" opacity="0.6"/>
+        <line x1="408" y1="80" x2="368" y2="120" stroke="#8A9AA8" stroke-width="0.5" opacity="0.6"/>
+        <line x1="464" y1="80" x2="424" y2="120" stroke="#8A9AA8" stroke-width="0.5" opacity="0.6"/>
+        <!-- Width dimension -->
+        <line x1="100" y1="150" x2="480" y2="150" stroke="#787068" stroke-width="0.8" marker-start="url(#arr-c5)" marker-end="url(#arr-c5)"/>
+        <text font-family="sans-serif" font-size="12" x="290" y="166" text-anchor="middle" fill="#787068">≈47⅝″ — measure actual interior before cutting</text>
+        <!-- Depth dimension -->
+        <line x1="540" y1="80" x2="540" y2="120" stroke="#787068" stroke-width="0.8" marker-start="url(#arr-c5)" marker-end="url(#arr-c5)"/>
+        <text font-family="sans-serif" font-size="12" x="560" y="103" fill="#787068">≈47⅝″</text>
+        <!-- Wire tie callout -->
+        <circle cx="103" cy="83" r="5" fill="none" stroke="#C04A1A" stroke-width="1.5"/>
+        <circle cx="477" cy="83" r="5" fill="none" stroke="#C04A1A" stroke-width="1.5"/>
+        <circle cx="143" cy="117" r="5" fill="none" stroke="#C04A1A" stroke-width="1.5"/>
+        <circle cx="517" cy="117" r="5" fill="none" stroke="#C04A1A" stroke-width="1.5"/>
+        <line x1="477" y1="78" x2="560" y2="50" stroke="#B0A898" stroke-width="0.6" stroke-dasharray="4 3"/>
+        <text font-family="sans-serif" font-size="11" x="563" y="46" fill="#C04A1A">Wire-tie locations</text>
+        <text font-family="sans-serif" font-size="11" x="563" y="59" fill="#787068">corners + rib crossings</text>
+        <!-- Material callout -->
+        <line x1="310" y1="100" x2="563" y2="185" stroke="#B0A898" stroke-width="0.6" stroke-dasharray="4 3"/>
+        <text font-family="sans-serif" font-size="11" x="566" y="181" fill="#4A5A65">¾″ × #9 SWD</text>
+        <text font-family="sans-serif" font-size="11" x="566" y="194" fill="#787068">flattened expanded metal</text>
+        <text font-family="sans-serif" font-size="11" x="566" y="207" fill="#787068">galvanized</text>
+        <!-- Caption -->
+        <text font-family="sans-serif" font-size="12" font-weight="600" x="100" y="300" fill="#2C3840">Galvanized flattened expanded metal · ¾″ × #9 SWD · qty 1 per box · all 6 identical</text>
+        <text font-family="sans-serif" font-size="11" x="100" y="316" fill="#787068">Rests on X-ribs and bottom rail horizontal legs · wire-tied at corners and rib crossings</text>
+        <text font-family="sans-serif" font-size="11" x="100" y="332" fill="#787068">Covered with 3-oz landscape fabric before filling · gopher-proof · free-draining</text>
+      </svg>
+    </div>
+
+    <h3>Corner post — cross-section identical · length varies by box type</h3>
+    <div class="diagram-wrap">
+      <svg viewBox="0 0 680 540" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="arr-c3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </marker>
+        </defs>
+        <text font-family="'IBM Plex Mono',monospace" font-size="11" x="308" y="148" text-anchor="middle" fill="#C04A1A">36″ post shown (Deep box) — same detail on 30″ (Mid) and 24″ (Shallow)</text>
+        <rect x="300" y="160" width="16" height="288" fill="#4A5A65" stroke="#2C3840" stroke-width="1.5"/>
+        <line x1="260" y1="352" x2="380" y2="352" stroke="#2D5F3F" stroke-width="1" stroke-dasharray="6 3"/>
+        <line x1="260" y1="448" x2="380" y2="448" stroke="#B0A898" stroke-width="0.9" stroke-dasharray="7 4"/>
+        <text font-family="sans-serif" font-size="11" x="384" y="452" fill="#B0A898">grade</text>
+        <rect x="300" y="352" width="16" height="16" fill="#A0B8C8" stroke="#2C3840" stroke-width="1.5"/>
+        <circle cx="303" cy="368" r="3" fill="#C04A1A" opacity="0.9"/>
+        <circle cx="313" cy="368" r="3" fill="#C04A1A" opacity="0.9"/>
+        <circle cx="308" cy="172" r="3" fill="#F4F2EE" stroke="#2C3840" stroke-width="1"/>
+        <circle cx="308" cy="184" r="3" fill="#F4F2EE" stroke="#2C3840" stroke-width="1"/>
+        <circle cx="308" cy="336" r="3" fill="#F4F2EE" stroke="#2C3840" stroke-width="1"/>
+        <circle cx="308" cy="346" r="3" fill="#F4F2EE" stroke="#2C3840" stroke-width="1"/>
+        <line x1="272" y1="160" x2="272" y2="448" stroke="#787068" stroke-width="0.8" marker-start="url(#arr-c3)" marker-end="url(#arr-c3)"/>
+        <text font-family="sans-serif" font-size="11" x="262" y="308" text-anchor="middle" transform="rotate(-90,262,308)" fill="#787068">36″ total</text>
+        <line x1="252" y1="160" x2="252" y2="352" stroke="#2D5F3F" stroke-width="0.8" marker-start="url(#arr-c3)" marker-end="url(#arr-c3)"/>
+        <text font-family="sans-serif" font-size="11" x="242" y="260" text-anchor="middle" transform="rotate(-90,242,260)" fill="#2D5F3F">24″</text>
+        <line x1="252" y1="352" x2="252" y2="448" stroke="#C04A1A" stroke-width="0.8" marker-start="url(#arr-c3)" marker-end="url(#arr-c3)"/>
+        <text font-family="sans-serif" font-size="11" x="242" y="404" text-anchor="middle" transform="rotate(-90,242,404)" fill="#C04A1A">12″</text>
+        <line x1="326" y1="352" x2="326" y2="368" stroke="#787068" stroke-width="0.8" marker-start="url(#arr-c3)" marker-end="url(#arr-c3)"/>
+        <text font-family="sans-serif" font-size="10" x="331" y="363" fill="#787068">2″</text>
+        <line x1="300" y1="146" x2="316" y2="146" stroke="#787068" stroke-width="0.8" marker-start="url(#arr-c3)" marker-end="url(#arr-c3)"/>
+        <text font-family="sans-serif" font-size="10" x="308" y="142" text-anchor="middle" fill="#787068">2″</text>
+        <line x1="316" y1="268" x2="400" y2="234" stroke="#B0A898" stroke-width="0.6" stroke-dasharray="4 3"/>
+        <text font-family="sans-serif" font-size="12" x="403" y="230" fill="#2C3840">2″×2″×3/16″ angle iron</text>
+        <line x1="308" y1="172" x2="400" y2="148" stroke="#B0A898" stroke-width="0.6" stroke-dasharray="4 3"/>
+        <text font-family="sans-serif" font-size="11" x="403" y="144" fill="#2C3840">¼″ bolt holes · top cap · 2 per end</text>
+        <line x1="308" y1="336" x2="400" y2="296" stroke="#B0A898" stroke-width="0.6" stroke-dasharray="4 3"/>
+        <text font-family="sans-serif" font-size="11" x="403" y="292" fill="#2C3840">¼″ bolt holes · bottom rail · just above gusset · inside face</text>
+        <line x1="316" y1="360" x2="400" y2="322" stroke="#B0A898" stroke-width="0.6" stroke-dasharray="4 3"/>
+        <text font-family="sans-serif" font-size="12" x="403" y="318" fill="#7A8F9E">2″×2″ sq tube gusset · 2″ tall</text>
+        <text font-family="sans-serif" font-size="11" x="403" y="331" fill="#787068">top at 12″ from post bottom · all 3 box types</text>
+        <text font-family="sans-serif" font-size="11" x="403" y="344" fill="#787068">bottom rail horizontal leg rests on top face</text>
+        <line x1="308" y1="368" x2="400" y2="390" stroke="#B0A898" stroke-width="0.6" stroke-dasharray="4 3"/>
+        <text font-family="sans-serif" font-size="11" x="403" y="394" fill="#C04A1A">weld at base of gusset</text>
+        <line x1="264" y1="352" x2="210" y2="396" stroke="#B0A898" stroke-width="0.6" stroke-dasharray="4 3"/>
+        <text font-family="sans-serif" font-size="11" x="100" y="410" fill="#2D5F3F">floor level · 12″ above grade · same on all box types</text>
+        <text font-family="sans-serif" font-size="12" font-weight="600" x="100" y="468" fill="#2C3840">Corner post: 2″×2″×3/16″ angle iron · qty 4 per box</text>
+        <text font-family="sans-serif" font-size="11" x="100" y="482" fill="#2C3840">Deep: 36″  ·  Mid: 30″  ·  Shallow: 24″</text>
+        <text font-family="sans-serif" font-size="11" x="100" y="496" fill="#C04A1A">Tube gusset: 2″×2″ sq tube · 2″ tall · top at 12″ from post bottom · identical on all three post sizes</text>
+      </svg>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
