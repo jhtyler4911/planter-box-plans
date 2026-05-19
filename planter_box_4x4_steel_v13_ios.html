@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>4×4 Steel Planter Box Plans — v13 iOS — 6 Boxes · 3 Depths</title>
+<title>4×4 Steel Planter Box Plans — v10 — 6 Boxes · 3 Depths</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Sans:wght@300;400;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
   :root {
@@ -29,10 +29,10 @@
   .rev-tag{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;background:var(--rust);color:white;padding:3px 8px;border-radius:2px;margin-bottom:16px;}
   .page{max-width:1000px;margin:0 auto;padding:44px 48px 80px;}
   .tab-bar{display:flex;border-bottom:2px solid var(--rule);margin-bottom:40px;flex-wrap:wrap;}
-  .tab{padding:13px 17px;font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;color:var(--muted);border-bottom:3px solid transparent;margin-bottom:-2px;transition:color .15s,border-color .15s;user-select:none;white-space:nowrap;-webkit-tap-highlight-color:rgba(192,74,26,0.2);touch-action:manipulation;text-decoration:none;display:inline-block;}
+  .tab{padding:13px 17px;font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;color:var(--muted);border-bottom:3px solid transparent;margin-bottom:-2px;transition:color .15s,border-color .15s;user-select:none;white-space:nowrap;}
   .tab:hover{color:var(--ink);}
   .tab.active{color:var(--rust);border-bottom-color:var(--rust);}
-  .panel{}
+  .panel{display:none;} .panel.active{display:block;}
   h2{font-family:'Bebas Neue',sans-serif;font-size:36px;letter-spacing:0.04em;margin-bottom:6px;color:var(--steel-dark);line-height:1;}
   h3{font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);margin:32px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--rule);}
   .section-intro{font-size:14px;color:var(--muted);margin-bottom:28px;max-width:660px;font-weight:300;line-height:1.75;}
@@ -68,47 +68,15 @@
   .toolbar{display:flex;justify-content:flex-end;margin-bottom:28px;}
   .btn{padding:9px 18px;border:1.5px solid var(--steel-dark);background:transparent;border-radius:var(--radius);font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;color:var(--steel-dark);transition:background .15s,color .15s;display:flex;align-items:center;gap:8px;}
   .btn:hover{background:var(--steel-dark);color:var(--paper);}
-  @media (max-width:700px){
-    .header-inner{grid-template-columns:1fr;padding:28px 20px 24px;gap:20px;}
-    .header-specs{min-width:unset;}
-    header h1{font-size:44px;}
-    .page{padding:16px 12px 60px;}
-    .tab-bar{overflow-x:auto;-webkit-overflow-scrolling:touch;flex-wrap:nowrap;scrollbar-width:none;margin-bottom:24px;}
-    .tab-bar::-webkit-scrollbar{display:none;}
-    .tab{min-height:48px;padding:14px 12px;font-size:10px;flex-shrink:0;}
-    .box-type-grid{grid-template-columns:1fr;}
-    .diagram-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;padding:10px;}
-    h2{font-size:26px;}
-    table{font-size:12px;}
-    td{padding:7px 8px;}
-    td:first-child{white-space:normal;}
-    thead th{font-size:9px;padding:7px 8px;}
-    .section-intro{font-size:13px;}
-    .step-num{min-width:28px;height:28px;}
-  }
   @media print{header{-webkit-print-color-adjust:exact;print-color-adjust:exact;}.tab-bar,.toolbar{display:none;}.panel{display:block!important;page-break-inside:avoid;}h2{page-break-before:always;margin-top:24px;}h2:first-of-type{page-break-before:avoid;}.note,thead th,tbody tr:nth-child(even){-webkit-print-color-adjust:exact;print-color-adjust:exact;}}
 </style>
-<script>
-function show(id){
-  var ids=['overview','boxtypes','corner','siding','floor','bottomrail','cap','materials','assembly','components'];
-  for(var i=0;i<ids.length;i++){
-    var p=document.getElementById('panel-'+ids[i]);
-    if(p) p.style.display=(ids[i]===id)?'block':'none';
-  }
-  var tabs=document.querySelectorAll('.tab');
-  for(var j=0;j<tabs.length;j++){
-    tabs[j].style.color=(tabs[j].getAttribute('data-tab')===id)?'var(--rust)':'var(--muted)';
-    tabs[j].style.borderBottomColor=(tabs[j].getAttribute('data-tab')===id)?'var(--rust)':'transparent';
-  }
-}
-</script>
 </head>
 <body>
 
 <header>
   <div class="header-inner">
     <div>
-      <div class="rev-tag">v13 iOS — 6 boxes · 3 depths</div>
+      <div class="rev-tag">v14 — 6 boxes · 3 depths · soil volume corrected</div>
       <div class="header-kicker">Workshop Build Plans · Modular Bolt-Together · All Angle Iron &amp; Corrugated Steel</div>
       <h1>4×4 Steel<br>Planter <em>Boxes</em></h1>
       <p class="header-sub">All-steel modular construction in three optimized depths — 24″ for tomatoes, 18″ for cucumbers &amp; peppers, 12″ for greens. Top cap and bottom rail frames are identical across all six boxes. No wood. Fully disassembles through a narrow gate.</p>
@@ -137,20 +105,20 @@ function show(id){
   </div>
 
   <div class="tab-bar">
-    <a class="tab active" data-tab="overview" onclick="show('overview')" href="javascript:void(0)">Overview</a>
-    <a class="tab" data-tab="boxtypes" onclick="show('boxtypes')" href="javascript:void(0)">Box Types</a>
-    <a class="tab" data-tab="corner" onclick="show('corner')" href="javascript:void(0)">Corner Post</a>
-    <a class="tab" data-tab="siding" onclick="show('siding')" href="javascript:void(0)">Siding</a>
-    <a class="tab" data-tab="floor" onclick="show('floor')" href="javascript:void(0)">Floor</a>
-    <a class="tab" data-tab="bottomrail" onclick="show('bottomrail')" href="javascript:void(0)">Bottom Rail</a>
-    <a class="tab" data-tab="cap" onclick="show('cap')" href="javascript:void(0)">Top Cap</a>
-    <a class="tab" data-tab="materials" onclick="show('materials')" href="javascript:void(0)">Materials</a>
-    <a class="tab" data-tab="assembly" onclick="show('assembly')" href="javascript:void(0)">Assembly</a>
-    <a class="tab" data-tab="components" onclick="show('components')" href="javascript:void(0)">Components</a>
+    <div class="tab active" onclick="show('overview')">Overview</div>
+    <div class="tab" onclick="show('boxtypes')">Box Types</div>
+    <div class="tab" onclick="show('corner')">Corner Post</div>
+    <div class="tab" onclick="show('siding')">Siding</div>
+    <div class="tab" onclick="show('floor')">Floor</div>
+    <div class="tab" onclick="show('bottomrail')">Bottom Rail</div>
+    <div class="tab" onclick="show('cap')">Top Cap</div>
+    <div class="tab" onclick="show('materials')">Materials</div>
+    <div class="tab" onclick="show('assembly')">Assembly</div>
+    <div class="tab" onclick="show('components')">Components</div>
   </div>
 
   <!-- ══ OVERVIEW ══ -->
-  <div id="panel-overview" class="panel" style="display:block">
+  <div id="panel-overview" class="panel active">
     <h2>Overview</h2>
     <p class="section-intro">Six 4×4 all-steel raised planters in three optimized depths. All share the same 12″ leg clearance, the same 48″×48″ top cap frame, and the same inside-fit bottom rail frame with X-support floor. Only post height and panel height change between box types.</p>
 
@@ -325,7 +293,7 @@ function show(id){
         <div class="bt-row"><span class="bt-key">Working height</span><span class="bt-val">36″</span></div>
         <div class="bt-row"><span class="bt-key">Post length</span><span class="bt-val">36″</span></div>
         <div class="bt-row"><span class="bt-key">Panel height</span><span class="bt-val">24″</span></div>
-        <div class="bt-row"><span class="bt-key">Soil / box</span><span class="bt-val">~2.4 cu yd</span></div>
+        <div class="bt-row"><span class="bt-key">Soil / box</span><span class="bt-val">~1.17 cu yd</span></div>
       </div>
       <div class="box-type-card mid">
         <h4>18″ Mid — ×2</h4>
@@ -335,7 +303,7 @@ function show(id){
         <div class="bt-row"><span class="bt-key">Working height</span><span class="bt-val">30″</span></div>
         <div class="bt-row"><span class="bt-key">Post length</span><span class="bt-val">30″</span></div>
         <div class="bt-row"><span class="bt-key">Panel height</span><span class="bt-val">18″</span></div>
-        <div class="bt-row"><span class="bt-key">Soil / box</span><span class="bt-val">~1.8 cu yd</span></div>
+        <div class="bt-row"><span class="bt-key">Soil / box</span><span class="bt-val">~0.88 cu yd</span></div>
       </div>
       <div class="box-type-card shallow">
         <h4>12″ Shallow — ×2</h4>
@@ -345,7 +313,7 @@ function show(id){
         <div class="bt-row"><span class="bt-key">Working height</span><span class="bt-val">24″</span></div>
         <div class="bt-row"><span class="bt-key">Post length</span><span class="bt-val">24″</span></div>
         <div class="bt-row"><span class="bt-key">Panel height</span><span class="bt-val">12″</span></div>
-        <div class="bt-row"><span class="bt-key">Soil / box</span><span class="bt-val">~1.2 cu yd</span></div>
+        <div class="bt-row"><span class="bt-key">Soil / box</span><span class="bt-val">~0.58 cu yd</span></div>
       </div>
     </div>
 
@@ -355,7 +323,7 @@ function show(id){
   </div>
 
   <!-- ══ BOX TYPES ══ -->
-  <div id="panel-boxtypes" class="panel" style="display:none">
+  <div id="panel-boxtypes" class="panel">
     <h2>Box Type Details</h2>
     <p class="section-intro">Three box types share all structural logic. Post height, panel height, and soil volume are the only variables. The gusset ledge is always 12″ from the post bottom on all three.</p>
 
@@ -384,10 +352,10 @@ function show(id){
     <table>
       <thead><tr><th>Box type</th><th>Volume per box</th><th>For ×2 boxes</th></tr></thead>
       <tbody>
-        <tr><td>Deep 24″ ×2</td><td>~2.37 cu yd</td><td>~4.7 cu yd</td></tr>
-        <tr><td>Mid 18″ ×2</td><td>~1.78 cu yd</td><td>~3.6 cu yd</td></tr>
-        <tr><td>Shallow 12″ ×2</td><td>~1.19 cu yd</td><td>~2.4 cu yd</td></tr>
-        <tr><td><strong>Total (6 boxes)</strong></td><td>—</td><td><strong>~10.7 cu yd</strong></td></tr>
+        <tr><td>Deep 24″ ×2</td><td>~1.17 cu yd</td><td>~2.33 cu yd</td></tr>
+        <tr><td>Mid 18″ ×2</td><td>~0.88 cu yd</td><td>~1.75 cu yd</td></tr>
+        <tr><td>Shallow 12″ ×2</td><td>~0.58 cu yd</td><td>~1.17 cu yd</td></tr>
+        <tr><td><strong>Total (6 boxes)</strong></td><td>—</td><td><strong>~5.25 cu yd net · order ~6 cu yd</strong></td></tr>
       </tbody>
     </table>
 
@@ -396,7 +364,7 @@ function show(id){
   </div>
 
   <!-- ══ CORNER POST ══ -->
-  <div id="panel-corner" class="panel" style="display:none">
+  <div id="panel-corner" class="panel">
     <h2>Corner Post Detail</h2>
     <p class="section-intro">A single piece of 2″×2″×3/16″ angle iron. Only total length varies between box types. The cross-section, gusset placement (12″ from post bottom), and bolt hole locations are identical across all three sizes. All four corners of every box are interchangeable.</p>
 
@@ -504,7 +472,7 @@ function show(id){
   </div>
 
   <!-- ══ SIDING ══ -->
-  <div id="panel-siding" class="panel" style="display:none">
+  <div id="panel-siding" class="panel">
     <h2>Corrugated Metal Siding</h2>
     <p class="section-intro">Four panels per box — one per side. Standard 29-gauge galvanized corrugated steel with horizontal corrugation. Panel height matches box depth. All panels attach identically to the interior face of the corner post legs via self-drilling screws.</p>
 
@@ -512,10 +480,10 @@ function show(id){
     <table>
       <thead><tr><th>Box type</th><th>Panel height</th><th>First pair width</th><th>Sheet yield</th><th>Sheets (×2 boxes)</th></tr></thead>
       <tbody>
-        <tr><td>Deep 24″</td><td>24″</td><td>≈47⅝″</td><td>2 panels per 3×8 sheet (12″ offcut strip)</td><td>4 sheets</td></tr>
-        <tr><td>Mid 18″</td><td>18″</td><td>≈47⅝″</td><td>2 panels per 3×8 sheet — zero waste</td><td>4 sheets</td></tr>
-        <tr><td>Shallow 12″</td><td>12″</td><td>≈47⅝″</td><td>2 from Deep offcut strips — no extra sheets</td><td>0 extra sheets</td></tr>
-        <tr><td><strong>Total</strong></td><td>—</td><td>—</td><td>—</td><td><strong>8 sheets</strong></td></tr>
+        <tr><td>Deep 24″</td><td>24″</td><td>≈47⅝″</td><td>2 panels per 4×8 sheet — zero waste</td><td>4 sheets</td></tr>
+        <tr><td>Mid 18″</td><td>18″</td><td>≈47⅝″</td><td>2 panels per 4×8 sheet (6″ offcut)</td><td>4 sheets</td></tr>
+        <tr><td>Shallow 12″</td><td>12″</td><td>≈47⅝″</td><td>4 panels per 4×8 sheet — zero waste</td><td>2 sheets</td></tr>
+        <tr><td><strong>Total</strong></td><td>—</td><td>—</td><td>—</td><td><strong>10 sheets</strong></td></tr>
       </tbody>
     </table>
 
@@ -531,11 +499,11 @@ function show(id){
       </tbody>
     </table>
 
-    <div class="note"><strong>Total sheet count:</strong> 8 sheets for all 6 boxes. The 12″ offcut strips from the 4 Deep sheets yield all 8 Shallow panels — zero extra sheets needed. Buy 10 total (one spare each for Deep and Mid) from the same standard 3×8 galvanized corrugated product.</div>
+    <div class="note"><strong>Total sheet count:</strong> 10 sheets for all 6 boxes. Buy 11 for one spare. All three panel heights come from the same standard 4×8 galvanized corrugated product.</div>
   </div>
 
   <!-- ══ FLOOR ══ -->
-  <div id="panel-floor" class="panel" style="display:none">
+  <div id="panel-floor" class="panel">
     <h2>Expanded Metal Floor</h2>
     <p class="section-intro">All six boxes share the same floor assembly. Galvanized expanded metal rests on the X-pattern flat bar ribs welded to the bottom rail frame. Floor is always 12″ above grade. The bottom rail frame and X-support are completely identical across all three box types — batch-fabricate all six at once.</p>
 
@@ -560,7 +528,7 @@ function show(id){
   </div>
 
   <!-- ══ BOTTOM RAIL ══ -->
-  <div id="panel-bottomrail" class="panel" style="display:none">
+  <div id="panel-bottomrail" class="panel">
     <h2>Bottom Rail</h2>
     <p class="section-intro">Four pieces per box — one per side. 2″×2″×3/16″ angle iron, cut to 47⅝″ with 45° miters on both ends. Horizontal leg faces down and rests on the tube gusset ledges at 12″ above grade. Vertical leg faces inward and bolts to the interior face of each corner post. No slits — full cross-section intact. All 24 pieces across six boxes are identical.</p>
 
@@ -600,7 +568,7 @@ function show(id){
   </div>
 
   <!-- ══ CAP ══ -->
-  <div id="panel-cap" class="panel" style="display:none">
+  <div id="panel-cap" class="panel">
     <h2>Angle Iron Top Cap</h2>
     <p class="section-intro">1½″ × 1½″ × ⅛″ angle iron, four pieces at 48″ with 45° miters, welded into a 48″×48″ frame. Completely identical across all six boxes regardless of depth. The horizontal leg is the hand-rest surface; the vertical leg drops down and the panel tops screw into it.</p>
 
@@ -630,7 +598,7 @@ function show(id){
   </div>
 
   <!-- ══ MATERIALS ══ -->
-  <div id="panel-materials" class="panel" style="display:none">
+  <div id="panel-materials" class="panel">
     <h2>Full Material List</h2>
     <p class="section-intro">All quantities for six complete boxes across three depth configurations. No wood in this build.</p>
 
@@ -724,17 +692,17 @@ function show(id){
 
     <!-- ── SECTION B: CORRUGATED PANELS ── -->
     <h2 style="font-size:22px;margin-top:40px;margin-bottom:4px;color:var(--steel-dark);">B — Corrugated Steel Panels — Box Sides</h2>
-    <p style="font-size:13px;color:var(--muted);margin-bottom:12px;line-height:1.7;">29-gauge galvanized corrugated steel, horizontal corrugation (ribs run side to side). Four panels per box — one per side. Panel height matches box soil depth. All panels purchased as standard 3′×8′ sheets and ripped to height on site.</p>
+    <p style="font-size:13px;color:var(--muted);margin-bottom:12px;line-height:1.7;">29-gauge galvanized corrugated steel, horizontal corrugation (ribs run side to side). Four panels per box — one per side. Panel height matches box soil depth. All panels purchased as standard 4′×8′ sheets and ripped to height on site.</p>
     <table>
       <thead><tr><th>What's needed</th><th>Sheet size purchased</th><th>Panel cut size</th><th>Panels per sheet</th><th>Sheets for ×2 boxes</th></tr></thead>
       <tbody>
-        <tr><td>Deep box panels (×2 boxes)</td><td>3′×8′ (36″×96″)</td><td>24″ h × ≈47⅝″ w</td><td>2 — 12″ offcut strip remaining</td><td>4 sheets</td></tr>
-        <tr><td>Mid box panels (×2 boxes)</td><td>3′×8′ (36″×96″)</td><td>18″ h × ≈47⅝″ w</td><td>2 — zero waste</td><td>4 sheets</td></tr>
-        <tr><td>Shallow box panels (×2 boxes)</td><td>3′×8′ (36″×96″)</td><td>12″ h × ≈47⅝″ w</td><td>2 from offcut strips of Deep sheets — zero added waste</td><td>0 extra sheets</td></tr>
-        <tr><td><strong>Total</strong></td><td>—</td><td>—</td><td>—</td><td><strong>8 sheets</strong></td></tr>
+        <tr><td>Deep box panels (×2 boxes)</td><td>4′×8′ (48″×96″)</td><td>24″ h × ≈47⅝″ w</td><td>2 — rip in half, zero waste</td><td>4 sheets</td></tr>
+        <tr><td>Mid box panels (×2 boxes)</td><td>4′×8′ (48″×96″)</td><td>18″ h × ≈47⅝″ w</td><td>2 — 6″ offcut remaining</td><td>4 sheets</td></tr>
+        <tr><td>Shallow box panels (×2 boxes)</td><td>4′×8′ (48″×96″)</td><td>12″ h × ≈47⅝″ w</td><td>4 — zero waste</td><td>2 sheets</td></tr>
+        <tr><td><strong>Total</strong></td><td>—</td><td>—</td><td>—</td><td><strong>10 sheets</strong></td></tr>
       </tbody>
     </table>
-    <p style="font-size:13px;margin-bottom:20px;"><strong>Buy requirement: four 3′×8′ sheets for Deep boxes · four 3′×8′ sheets for Mid boxes · zero extra sheets for Shallow boxes (Shallow panels cut from Deep sheet offcuts) — eight sheets total</strong></p>
+    <p style="font-size:13px;margin-bottom:20px;"><strong>Buy requirement: five 4′×8′ sheets for Deep boxes · five 4′×8′ sheets for Mid boxes · three 4′×8′ sheets for Shallow boxes (one spare each type) — thirteen sheets total</strong></p>
     <div class="note tip"><strong>Second pair width:</strong> Cut the first pair of panels per side to ≈47⅝″. Cut the second pair to the actual measured gap after the first pair is installed — measure in place before cutting. Applies to all three box types.</div>
 
     <!-- ── SECTION C: EXPANDED METAL ── -->
@@ -779,13 +747,13 @@ function show(id){
     <table>
       <thead><tr><th>Box type</th><th>Per box</th><th>For ×2 boxes</th></tr></thead>
       <tbody>
-        <tr><td>Deep 24″ ×2</td><td>~2.37 cu yd</td><td>~4.7 cu yd</td></tr>
-        <tr><td>Mid 18″ ×2</td><td>~1.78 cu yd</td><td>~3.6 cu yd</td></tr>
-        <tr><td>Shallow 12″ ×2</td><td>~1.19 cu yd</td><td>~2.4 cu yd</td></tr>
-        <tr><td><strong>Total (6 boxes)</strong></td><td>—</td><td><strong>~10.7 cu yd</strong></td></tr>
+        <tr><td>Deep 24″ ×2</td><td>~1.17 cu yd</td><td>~2.33 cu yd</td></tr>
+        <tr><td>Mid 18″ ×2</td><td>~0.88 cu yd</td><td>~1.75 cu yd</td></tr>
+        <tr><td>Shallow 12″ ×2</td><td>~0.58 cu yd</td><td>~1.17 cu yd</td></tr>
+        <tr><td><strong>Total (6 boxes)</strong></td><td>—</td><td><strong>~5.25 cu yd net · order ~6 cu yd</strong></td></tr>
       </tbody>
     </table>
-    <div class="note warn"><strong>Soil order:</strong> ~10.7 cu yd — order bulk delivery from a landscape supply company. Specify vegetable garden mix with good drainage and high organic content.</div>
+    <div class="note warn"><strong>Soil order:</strong> ~5.25 cu yd net fill — order ~6 cu yd from a landscape supply company to allow for 10–15% settling and first-week top-off. Specify vegetable garden mix with good drainage and high organic content.</div>
     <h2 style="font-size:22px;margin-top:40px;margin-bottom:4px;color:var(--steel-dark);">Complete Buy List — All Materials</h2>
     <p style="font-size:13px;color:var(--muted);margin-bottom:12px;line-height:1.7;">All purchase requirements across every section consolidated in one place. Bring this list to your steel supplier, lumber yard, and hardware store.</p>
 
@@ -797,9 +765,9 @@ function show(id){
         <tr><td>A2 · Angle iron — top cap frames</td><td>1½″×1½″×⅛″ angle iron, 20′ sticks</td><td><strong>6 sticks</strong></td></tr>
         <tr><td>A3 · Square tube — gusset ledges</td><td>1¾″ square tube, any length</td><td><strong>1 × 6′ drop</strong></td></tr>
         <tr><td>A4 · Flat bar — floor X-ribs</td><td>1½″×3/16″ flat bar, 20′ sticks</td><td><strong>3 sticks</strong></td></tr>
-        <tr><td>B · Corrugated panels — Deep boxes</td><td>29-ga galv. corrugated, 3′×8′ sheets</td><td><strong>4 sheets</strong></td></tr>
-        <tr><td>B · Corrugated panels — Mid boxes</td><td>29-ga galv. corrugated, 3′×8′ sheets</td><td><strong>4 sheets</strong></td></tr>
-        <tr><td>B · Corrugated panels — Shallow boxes</td><td>Cut from Deep sheet offcuts — no extra sheets needed</td><td><strong>0 sheets</strong></td></tr>
+        <tr><td>B · Corrugated panels — Deep boxes</td><td>29-ga galv. corrugated, 4′×8′ sheets</td><td><strong>5 sheets</strong></td></tr>
+        <tr><td>B · Corrugated panels — Mid boxes</td><td>29-ga galv. corrugated, 4′×8′ sheets</td><td><strong>5 sheets</strong></td></tr>
+        <tr><td>B · Corrugated panels — Shallow boxes</td><td>29-ga galv. corrugated, 4′×8′ sheets</td><td><strong>3 sheets</strong></td></tr>
         <tr><td>C · Expanded metal — box floors</td><td>Galv. flattened expanded metal, ¾″×#9 SWD, cut to ≈47⅝″×47⅝″</td><td><strong>6 cut-to-size sheets</strong></td></tr>
       </tbody>
     </table>
@@ -830,13 +798,13 @@ function show(id){
     <table>
       <thead><tr><th>Item</th><th>Spec</th><th>Buy</th></tr></thead>
       <tbody>
-        <tr><td>Vegetable garden growing mix</td><td>High organic content, good drainage — suitable for tomatoes. Bulk delivery recommended.</td><td><strong>~10.7 cubic yards</strong></td></tr>
+        <tr><td>Vegetable garden growing mix</td><td>High organic content, good drainage — suitable for tomatoes. Bulk delivery recommended.</td><td><strong>~6 cubic yards</strong> (5.25 net + settling buffer)</td></tr>
       </tbody>
     </table>
   </div>
 
   <!-- ══ ASSEMBLY ══ -->
-  <div id="panel-assembly" class="panel" style="display:none">
+  <div id="panel-assembly" class="panel">
     <h2>Assembly Order</h2>
     <p class="section-intro">All cutting is done first — angle iron, flat bar, square tube, corrugated panels. Then all welding and drilling in the shop. Then finishing. Then site installation. This sequence means you never pick up a grinder or drill press mid-assembly.</p>
 
@@ -875,7 +843,7 @@ function show(id){
   </div>
 
   <!-- ══ COMPONENTS ══ -->
-  <div id="panel-components" class="panel" style="display:none">
+  <div id="panel-components" class="panel">
     <h2>Component Drawings</h2>
     <p class="section-intro">Fabrication reference for all major components. Everything shown here — angle iron frames, panels, floor — appears in one place for shop reference.</p>
 
@@ -1109,5 +1077,13 @@ function show(id){
   </div>
 
 </div>
+<script>
+function show(id){
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('panel-'+id).classList.add('active');
+  event.target.classList.add('active');
+}
+</script>
 </body>
 </html>
